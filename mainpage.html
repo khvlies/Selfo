@@ -31,8 +31,8 @@
 	  overflow: hidden;
 	  background-color: #fff;
     position:fixed;
-    top:0%;
-    width:100%;
+    top: 0%;
+    width: 100%;
 	}
 
 	li {
@@ -47,10 +47,13 @@
 	  text-decoration: none;
 	}
 	/* Change the link color to #097F94 (blue) on hover */
-	li a:hover {
+	li a:hover:not(.active){
 	  background-color: #097F94;
 	  color: white;
 	}
+  .active{
+    background-color:black;
+  }
 	.logo {
 		text-align: center;
 		margin: 20px;
@@ -68,14 +71,28 @@
 		<img src="selfo.jpg" alt="Company Logo" style="width: 70px; height: auto;">
       </div>
 	</li>
-    <li><a href="#">Home</a></li>
+    <li><a class="active" href="#">Home</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Study Material</a></li>
     <li><a href="#">Past Year</a></li>
 	<li style="float:right"><a class="active" href="#about">Profile</a></li>
   </ul>
-  <div class="content">
+  <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
+    <h1>Fixed top navigaation bar</h1>
     
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>  
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
+    <p>Some text some text some text some text..</p>
     </div>
   </div>
 </body>
