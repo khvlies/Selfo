@@ -5,7 +5,7 @@
     <html>
     <body>
     <?php echo $_SESSION['username']; ?> [<a href="logout.php">Logout</a>] <br>
-    <a href="mainpageNew.html">Main Page</a>
+    <a href="mainpageNew.">Main Page</a>
     </body>
     </html>
     <?php
