@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+    }
+    .header {
+      background-color: #fff;
+      padding: 5px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo img {
+      width: 70px;
+      height: auto;
+    }
+    .sidebar {
+      background-color: #097F94;
+      width: 250px;
+      height: 100%;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      padding-top: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .sidebar a:hover {
+      background-color: #065e6d;
+    }
+    .main-content {
+      margin-left: 350px;
+      padding: 20px;
+      width: 100%;
+      height: 700px;
+      max-width: 800px;
+      background-color: #fff;
+      border-radius: 25px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 100px;
+    }
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .profile-info img {
+      width: 150px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .profile-info h2 {
+      margin: 10px 0;
+    }
+    .profile-info p {
+      margin: 5px 0;
+    }
+    input[type=text], input[type=password], input[type=email], input[type=tel] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      box-sizing: border-box;
+    }
+    input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=tel]:focus {
+      border-color: #097F94;
+      outline: none;
+    }
+    button {
+      background-color: #097F94;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #065e6d;
+    }
+    .edit-button {
+      background-color: #4CAF50;
+    }
+    .edit-button:hover {
+      background-color: #45a049;
+    }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="selfo.jpg" alt="Company Logo">
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <a href="#profile">Profile</a>
+    <a href="#settings">Settings</a>
+    <a href="#logout">Logout</a>
+  </div>
+
+  <div class="main-content">
+    <div class="profile-info">
+      <img src="profile.png" alt="Profile Picture">
+      <h2>John Doe</h2>
+      <form action="/update_profile" method="post">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required value="John Doe">
+        
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required value="johndoe">
+        
+        <label for="phoneno"><b>Phone No</b></label>
+        <input type="tel" placeholder="Enter Phone No" name="phoneno" required value="+1234567890">
+        
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" required value="johndoe@example.com">
+        
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        
+        <div class="clearfix">
+          <button type="submit" class="edit-button">Update Profile</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
