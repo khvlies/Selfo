@@ -2,10 +2,12 @@
 session_start();
 ## include db connection file 
 include("dbconn_selfo.php");
+
 if(isset($_POST['Submit'])){
     ## capture values from HTML form 
     $username = $_POST['username'];
     $password = $_POST['password'];
+	
     ## verify if the values of username and password are correct
     if($username == "admin" && $password == "admin"){
         ## set the session’s username as administrator
