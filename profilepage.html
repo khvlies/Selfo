@@ -106,10 +106,28 @@
       background-color: #065e6d;
     }
     .edit-button {
-      background-color: #4CAF50;
+      font-size: medium;
+      color: #4CAF50;
+      background-color: #ffffff;
+      border: 1px solid #4CAF50;
     }
     .edit-button:hover {
       background-color: #45a049;
+      color: #ffffff;
+    }
+    .cancel-button {
+      font-size: medium;
+      color: rgb(197, 0, 0);
+      background-color: #ffffff;
+      border: 1px solid rgb(197, 0, 0);
+    }
+    .cancel-button:hover {
+      background-color: rgb(197, 0, 0);
+      color: #ffffff;
+    }
+    .updateprofile-button {
+      margin-bottom: 10px;
+      display: flex;
     }
     .clearfix::after {
       content: "";
@@ -152,7 +170,11 @@
         <input type="password" placeholder="Enter Password" name="psw" required>
         
         <div class="clearfix">
-          <button type="submit" class="edit-button">Update Profile</button>
+          <div class="updateprofile-button">
+            <button type="submit" class="edit-button">Update</button>
+            <span style="margin: 0 10px;"></span>
+            <button type="submit" class="cancel-button">Cancel</button>
+          </div>
         </div>
       </form>
     </div>

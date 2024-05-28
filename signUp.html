@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #097F94;
       margin: 0;
       padding: 0;
       display: flex;
@@ -31,21 +31,9 @@
       width: 70px;
       height: auto;
     }
-    .back-button {
-      position: fixed;
-      left: 20px;
-      top: 120px;
-      transform: translateY(-50%);
-      background-color: #097F94;
-      width: 100px;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-      color: white;
-    }
     .container {
       background-color: #fff;
-      padding: 25px;
+      padding: 30px;
       border-radius: 25px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       max-width: 400px;
@@ -85,13 +73,13 @@
       background-color: #ffffff;
       color: #097F94;
     }
-    .cancelbtn {
-      background-color: #f44336;
-      border: 1px solid #f44336;
+    .backbtn {
+      background-color: #054652;
+      border: 1px solid #054652;
     }
-    .cancelbtn:hover {
+    .backbtn:hover {
       background-color: white;
-      color: #f44336;
+      color: #054652;
     }
     .clearfix::after {
       content: "";
@@ -111,10 +99,9 @@
       <img src="selfo.jpg" alt="Company Logo">
     </div>
   </div>
-  <button class="back-button" onclick="window.history.back();">Back</button>
   <div class="container">
     <form action="/action_page.php">
-      <h1>Create Account</h1>
+      <div style="font-size:1.5em; color:#696666; text-align:center;">Create your account</div>
       <hr>
 
       <label for="name"><b>Name</b></label>
@@ -133,8 +120,8 @@
       <input type="password" placeholder="Enter Password" name="psw" required>
       
       <div class="clearfix">
-        <button type="submit" class="signupbtn">Sign Up</button>
-        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="confirmbtn">Confirm</button>
+        <button type="button" class="backbtn">Back</button>
       </div>
     </form>
   </div>
