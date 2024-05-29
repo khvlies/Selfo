@@ -72,12 +72,12 @@
 		<input type="button" value="Admin" onclick="setUserType('admin');">
     </div>
 
-    <form action="/login" method="post">
+    <form name="form" action="loginSession.php" method="post">
 		<input type="text" name="username" placeholder="Username" required>
 		<input type="password" name="password" placeholder="Password" required>
 		<input type="submit" value="Login">
     </form>
-		<input type="button" value="Sign Up" onclick="window.location.href='/signup';">
+		<input type="button" value="Sign Up" onclick="window.location.href='signUp.php';">
   
   </div>
 </body>

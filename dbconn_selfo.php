@@ -6,10 +6,6 @@ $host = "localhost"; //server name or ip address
 $dbname = "educationdb"; //your db name	
 
 //Create connection
-$dbconn = mysqli_connect($host, $user, $pass, $dbname) 
+$dbconn = mysqli_connect($host, $user, $pass, $dbname) or die (mysqli_error($dbconn));
 
-//Check connection
-if (!$dbconn){
-    die("Connection failed: "mysqli_error());
-}
 ?>

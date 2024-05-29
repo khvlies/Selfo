@@ -1,8 +1,3 @@
-<?php
-include("dbconn_selfo.php");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

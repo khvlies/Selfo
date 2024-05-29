@@ -1,10 +1,16 @@
 <?php
-include("dbconn_selfo.php");
-
+session_start();
+if (!isset($_SESSION['username']) || $_SESSION['username'] != "Administrator") {
+    header("Location: loginpage.php");
+    exit();
+}
+else
+ echo"successfull login";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
