@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #097F94;
       margin: 0;
       padding: 0;
       display: flex;
@@ -70,6 +70,7 @@
     <div class="logo">
 		<img src="selfo.jpg" alt="Company Logo" style="width: 140px; height: auto;">
     </div>
+    
 		<div class="user-type-btns">
 		<input type="button" name="userTypeButton" value="User" onclick="setUserType('user');" aria-label="User Login">
       <span style="margin: 0 10px;"></span>

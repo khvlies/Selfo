@@ -8,14 +8,21 @@ if(isset($_POST['Submit'])){
     $username = mysqli_real_escape_string($dbconn, $_POST['username']);
     $password = mysqli_real_escape_string($dbconn, $_POST['password']);
 
-    # verify if the values of username and password are correct
-    if($username == "admin" && $password == "admin"){
+	## execute SQL command to check if the user is an administrator
+    $sql_admin = "SELECT * FROM admins WHERE admin_id= '$username' AND admin_password= '$password' ";
+    $query_admin = mysqli_query($dbconn, $sql_admin) or die("Error: " . mysqli_error($dbconn));
+    $rows_admin = mysqli_num_rows($query_admin);
+    
+    ## check if the user is an administrator
+    if($rows_admin > 0){
         ## set the session’s username as administrator
-        $_SESSION['username'] = "Administrator";
-        ## directly open the page for menuAdmin 
-        header("Location: adminMainpage.php");
-        exit();
-    } else { 
+		$_SESSION['username'] = $username;
+		$_SESSION['role'] = "Administrator";
+		header("Location: adminMainpage.php");
+		exit();
+    }
+	##if the user is not an admin, check if the user is a tutor, basic or premium user
+	else { 
         ## Check if the user is a tutor
         $sql = "SELECT * FROM tutor WHERE tutor_id = '$username' AND tutor_password = '$password'";
         $query = mysqli_query($dbconn, $sql) or die("Error: " . mysqli_error($dbconn));
@@ -65,6 +72,7 @@ if(isset($_POST['Submit'])){
             }
         }
     }
+	header("Location: loginpage.php");
 }
 mysqli_close($dbconn); //close connection
 ?>
