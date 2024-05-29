@@ -57,7 +57,13 @@
     .user-type-btns input[type="button"] {
       flex: 1;
     }
+    
   </style>
+  <script>
+    function setUserType(userType) {
+      document.getElementById('userType').value = userType;
+    }
+  </script>
 </head>
 <body>
 	<div class="container">
@@ -65,19 +71,20 @@
 		<img src="selfo.jpg" alt="Company Logo" style="width: 140px; height: auto;">
     </div>
 		<div class="user-type-btns">
-		<input type="button" value="User" onclick="setUserType('user');">
-		<span style="margin: 0 10px;">  </span>
-    <input type="button" value="Tutor" onclick="setUserType('tutor');">
-		<span style="margin: 0 10px;">  </span>
-		<input type="button" value="Admin" onclick="setUserType('admin');">
+		<input type="button" name="userTypeButton" value="User" onclick="setUserType('user');" aria-label="User Login">
+      <span style="margin: 0 10px;"></span>
+      <input type="button" name="userTypeButton" value="Tutor" onclick="setUserType('tutor');" aria-label="Tutor Login">
+      <span style="margin: 0 10px;"></span>
+      <input type="button" name="userTypeButton" value="Admin" onclick="setUserType('admin');" aria-label="Admin Login">
     </div>
 
     <form name="form" action="loginSession.php" method="post">
-		<input type="text" name="username" placeholder="Username" required>
-		<input type="password" name="password" placeholder="Password" required>
-		<input type="submit" value="Login">
+      <input type="hidden" id="userType" name="userType" value="">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="submit" value="Login">
     </form>
-		<input type="button" value="Sign Up" onclick="window.location.href='signUp.php';">
+		<input type="button" value="Sign Up" onclick="window.location.href='signUp.php';" aria-label="Sign Up">
   
   </div>
 </body>
