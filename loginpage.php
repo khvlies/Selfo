@@ -7,7 +7,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #097F94;
+      background: rgb(21,18,65);
+      background: linear-gradient(90deg, rgba(21,18,65,1) 10%, rgba(9,127,148,1) 65%);
       margin: 0;
       padding: 0;
       display: flex;
@@ -20,10 +21,10 @@
       padding: 30px;
       border-radius: 25px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
+      max-width: 350px;
       width: 100%;
       text-align: center;
-      margin-left: 30%;
+      margin-left: 20%;
     }
     input[type="text"], input[type="password"], input[type="submit"], input[type="button"] {
       width: 100%;
@@ -51,24 +52,23 @@
 		text-align: center;
 		margin: 1px 0 1px 0;
     }
-	.user-type-btns {
-      margin-bottom: 10px;
-      display: flex;
-    }
-    .user-type-btns input[type="button"] {
-      flex: 1;
-    }
     .welcome-message{
       color: white;
       text-align: left;
       font-size: 3em;
     }
+    
   </style>
   <script>
     function setUserType(userType) {
       document.getElementById('userType').value = userType;
     }
+    // Function to show pop-up alert if there's an error
+    function showError(message) {
+      alert(message);
+    }
   </script>
+
 </head>
 <body>
   <div class="welcome-message">
@@ -78,22 +78,22 @@
     <div class="logo">
 		<img src="selfo.jpg" alt="Company Logo" style="width: 140px; height: auto;">
     </div>
-    
-		<div class="user-type-btns">
-		<input type="button" name="userTypeButton" value="User" onclick="setUserType('user');" aria-label="User Login">
-      <span style="margin: 0 10px;"></span>
-      <input type="button" name="userTypeButton" value="Tutor" onclick="setUserType('tutor');" aria-label="Tutor Login">
-      <span style="margin: 0 10px;"></span>
-      <input type="button" name="userTypeButton" value="Admin" onclick="setUserType('admin');" aria-label="Admin Login">
-    </div>
-
+    <p>
     <form name="form" action="loginSession0.php" method="post">
-      <input type="hidden" id="userType" name="userType" value="">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Login">
     </form>
 		<input type="button" value="Sign Up" onclick="window.location.href='signUp.php';" aria-label="Sign Up">
   </div>
+
+  <!-- Check for error message in PHP session and display alert if exists -->
+  <?php
+  session_start();
+  if (isset($_SESSION['error'])) {
+      echo "<script>showError('" . $_SESSION['error'] . "');</script>";
+      unset($_SESSION['error']); // Clear the error after displaying
+  }
+  ?>
 </body>
 </html>

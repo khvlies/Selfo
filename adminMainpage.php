@@ -36,9 +36,9 @@ session_start();
 	  padding: 0;
 	  overflow: hidden;
 	  background-color: #fff;
-    position:fixed;
-    top: 0%;
-    width: 100%;
+      position:fixed;
+      top: 0%;
+      width: 100%;
 	}
 
 	li {
