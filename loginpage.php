@@ -23,6 +23,7 @@
       max-width: 400px;
       width: 100%;
       text-align: center;
+      margin-left: 30%;
     }
     input[type="text"], input[type="password"], input[type="submit"], input[type="button"] {
       width: 100%;
@@ -57,7 +58,11 @@
     .user-type-btns input[type="button"] {
       flex: 1;
     }
-    
+    .welcome-message{
+      color: white;
+      text-align: left;
+      font-size: 3em;
+    }
   </style>
   <script>
     function setUserType(userType) {
@@ -66,6 +71,9 @@
   </script>
 </head>
 <body>
+  <div class="welcome-message">
+    Welcome to Selfo!
+  </div>
 	<div class="container">
     <div class="logo">
 		<img src="selfo.jpg" alt="Company Logo" style="width: 140px; height: auto;">
@@ -79,14 +87,13 @@
       <input type="button" name="userTypeButton" value="Admin" onclick="setUserType('admin');" aria-label="Admin Login">
     </div>
 
-    <form name="form" action="loginSession.php" method="post">
+    <form name="form" action="loginSession0.php" method="post">
       <input type="hidden" id="userType" name="userType" value="">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Login">
     </form>
 		<input type="button" value="Sign Up" onclick="window.location.href='signUp.php';" aria-label="Sign Up">
-  
   </div>
 </body>
 </html>

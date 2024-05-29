@@ -1,5 +1,11 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,14 +121,14 @@
 </head>
 <body>
   <ul>
-    <li class="logo"><img src="selfo.jpg" alt="Company Logo" style="width: 70px; height: auto;"></li>
+    <li class="logo"><img src="images/selfo.jpg" alt="Company Logo" style="width: 70px; height: auto;"></li>
     <li><a class="active" href="#">Home</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Study Material</a></li>
     <li><a href="#">Past Year</a></li>
     <li><a href="#">Tutor</a></li>
     <li class="profile">
-      <img src="profile.png" alt="Profile Icon">
+      <img src="images/profile.png" alt="Profile Icon"/>
       <a href="#profile">Username</a>
     </li>
   </ul>
@@ -130,21 +136,21 @@
         <div class="row">
             <div class="column">
               <div id="Study Material" class="box-content">
-                <img src="studymaterial.png" alt="Book Icon" style="width: 300px; height: auto;">
+                <img src="images/studymaterial.png" alt="Book Icon" style="width: 300px; height: auto;">
                 <h2>Study Material</h2>
               </div>
             </div>
             
             <div class="column">
               <div id="Past Year" class="box-content">
-                <img src="pastyear.png" alt="Question Icon" style="width: 300px; height: auto;">
+                <img src="images/pastyear.png" alt="Question Icon" style="width: 300px; height: auto;">
                 <h2>Past Year</h2>
               </div>
             </div>
             
             <div class="column">
               <div id="Tutor" class="box-content">
-                <img src="tutor.png" alt="Chatbox Icon" style="width: 300px; height: auto;">
+                <img src="images/tutor.png" alt="Chatbox Icon" style="width: 300px; height: auto;">
                 <h2>Tutor</h2>
               </div>
             </div>
