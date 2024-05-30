@@ -96,7 +96,7 @@
 <body>
   <div class="header">
     <div class="logo">
-      <img src="selfo.jpg" alt="Company Logo">
+      <img src="images/selfo.jpg" alt="Company Logo">
     </div>
   </div>
   <div class="container">

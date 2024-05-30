@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Sign Up</title>
   <style>
     body {
@@ -32,7 +33,7 @@
       align-items: center;
       flex-wrap: wrap;
       width: 100%;
-      margin-top: 100px;
+      margin-top: 60px;
     }
     .column {
       flex: 1;
@@ -54,7 +55,8 @@
     li{
         display: block;
         text-align: left;
-        color: white;
+        color: black;
+        margin-left: 10px;
     }
   </style>
 </head>
@@ -73,8 +75,8 @@
             <li style="font-size:2em;"> RM0
             <p>
             <li> Features you'll get :
-            <li> 500+ Study Material
-            <li> Past year question including suggested answer
+            <li><i class="fa fa-check" style="font-size:20px"></i> 500+ Study Material
+            <li><i class="fa fa-check" style="font-size:20px"></i> Past year question including suggested answer
         </ul>
       </div>
     </div>
@@ -85,8 +87,8 @@
             <li style="font-size:2em;"> RM65/month
             <p>
             <li> Everything in free, plus:
-            <li> Additional Notes
-            <li> Tutor
+            <li><i class="fa fa-check" style="font-size:20px"></i> Additional Notes
+            <li><i class="fa fa-check" style="font-size:20px"></i> Tutor
         </ul>
       </div>
     </div>
