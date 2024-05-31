@@ -5,7 +5,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "educationdb";
+$database = "educationdb2";
 
 // Database connection
 $conn = new mysqli("localhost", "root", "", "educationdb");

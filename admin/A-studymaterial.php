@@ -90,37 +90,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
     .profile a:hover {
       color: #097F94;
     }
-    .content {
-      padding: 20px;
-      margin-top: 80px;
-      min-height: calc(100vh - 80px);
-    }
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      margin-top: 120px;
-    }
-    .column {
-      flex: 1;
-      max-width: 250px;
-      margin: 5px;
-      min-width: 250px;
-    }
-    .box-content {
-      background-color: #fff;
-      padding: 40px;
-      border-radius: 25px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    .box-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      max-height: 200px;
-      object-fit: cover;
-    }
     @media screen and (max-width: 600px) {
       .profile img {
         width: 40px;
@@ -128,48 +97,24 @@ $current_page = basename($_SERVER['PHP_SELF']);
       .menu-items a {
         padding: 10px;
       }
-      .column {
-        min-width: 100%;
-      }
     }
   </style>
 </head>
 <body>
   <ul>
-    <li class="logo"><img src="images/selfo.jpg" alt="Company Logo"></li>
+    <li class="logo"><img src="../images/selfo.jpg" alt="Company Logo"></li>
     <div class="menu-items">
-      <a class="active" href=" listStudyMaterial.php">Study Material</a>
+      <a class="active" href="admin_page.php">Home</a>
+      <a href=" listStudyMaterial.php">Study Material</a>
       <a href=" listPastYear.php">Past Year</a>
       <a href=" listBasicUser.php">Basic User</a>
       <a href=" listPremiumUser.php">Premium User</a>
       <a href=" listTutor.php">Tutor</a>
     </div>
     <li class="profile">
-      <img src="images/profile.png" alt="Profile Icon"/>
+      <img src="../images/profile.png" alt="Profile Icon"/>
       <a href="profilepage.php"><?php echo htmlspecialchars($admin_name); ?></a>
     </li>
   </ul>
-  <div class="content">
-    <div class="row">
-      <div class="column">
-        <div id="Study Material" class="box-content">
-        <a href="listStudyMaterial.php"><img src="images/studymaterial.png" alt="Book Icon"></a>
-          <h2>Study Material</h2>
-        </div>
-      </div>
-      <div class="column">
-        <div id="Past Year" class="box-content" >
-        <a href="listPastYear.php"><img src="images/pastyear.png" alt="Question Icon"></a>
-          <h2>Past Year</h2>
-        </div>
-      </div>
-      <div class="column">
-        <div id="Tutor" class="box-content">
-        <a href="#listTutor.php"><img src="images/tutor.png" alt="Chatbox Icon"></a>
-          <h2>Tutor</h2>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 </html>

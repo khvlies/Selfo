@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+$admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin';
+$current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +10,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Page</title>
+  <title>Admin Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -23,7 +26,7 @@ session_start();
     .menu a {
       text-decoration: none;
       color: #fff;
-      padding: 0 30px;
+      padding: 20px 30px;
     }
     .menu a:hover {
       background-color: #ddd;
@@ -133,36 +136,37 @@ session_start();
 </head>
 <body>
   <ul>
-    <li class="logo"><img src="images/selfo.jpg" alt="Company Logo"></li>
+    <li class="logo"><img src="../images/selfo.jpg" alt="Company Logo"></li>
     <div class="menu-items">
-      <a class="active" href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Study Material</a>
-      <a href="#">Past Year</a>
-      <a href="#">Tutor</a>
+      <a class="active" href="admin_page.php">Home</a>
+      <a href=" listStudyMaterial.php">Study Material</a>
+      <a href=" listPastYear.php">Past Year</a>
+      <a href=" listBasicUser.php">Basic User</a>
+      <a href=" listPremiumUser.php">Premium User</a>
+      <a href=" listTutor.php">Tutor</a>
     </div>
     <li class="profile">
-      <img src="images/profile.png" alt="Profile Icon"/>
-      <a href="#profile">Username</a>
+      <img src="../images/profile.png" alt="Profile Icon"/>
+      <a href="profilepage.php"><?php echo htmlspecialchars($admin_name); ?></a>
     </li>
   </ul>
   <div class="content">
     <div class="row">
       <div class="column">
         <div id="Study Material" class="box-content">
-          <img src="images/studymaterial.png" alt="Book Icon">
+        <a href="listStudyMaterial.php"><img src="../images/studymaterial.png" alt="Book Icon"></a>
           <h2>Study Material</h2>
         </div>
       </div>
       <div class="column">
-        <div id="Past Year" class="box-content">
-          <img src="images/pastyear.png" alt="Question Icon">
+        <div id="Past Year" class="box-content" >
+        <a href="listPastYear.php"><img src="../images/pastyear.png" alt="Question Icon"></a>
           <h2>Past Year</h2>
         </div>
       </div>
       <div class="column">
         <div id="Tutor" class="box-content">
-          <img src="images/tutor.png" alt="Chatbox Icon">
+        <a href="#listTutor.php"><img src="../images/tutor.png" alt="Chatbox Icon"></a>
           <h2>Tutor</h2>
         </div>
       </div>
