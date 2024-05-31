@@ -80,7 +80,7 @@
     </div>
     <p>
     <form id ="login-form" action="loginSession0.php" method="post">
-      <input type="text" name="username" placeholder="Username" required>
+      <input type="text" name="username" placeholder="User ID" required>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Login">
     </form>

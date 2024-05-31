@@ -89,7 +89,7 @@
           <li><i class="fa fa-check" style="font-size:20px"></i> 500+ Study Material</li>
           <li><i class="fa fa-check" style="font-size:20px"></i> Past year question including suggested answer</li>
         </ul>
-        <input class="checkout" type="button" value="Subscribe" onclick="window.location.href='subscribe.php?plan=Free';" aria-label="Subscribe">      </div>
+        <input class="checkout" type="button" value="Subscribe" onclick="window.location.href='basic_subscribe.php';" aria-label="Subscribe">      </div>
     </div>
     <div class="column">
       <div class="box-content">
@@ -101,7 +101,7 @@
           <li><i class="fa fa-check" style="font-size:20px"></i> Additional Notes</li>
           <li><i class="fa fa-check" style="font-size:20px"></i> Tutor</li>
         </ul>
-        <input class="checkout" type="button" value="Subscribe" onclick="window.location.href='subscribe.php?plan=Premium';" aria-label="Subscribe">
+        <input class="checkout" type="button" value="Subscribe" onclick="window.location.href='premium_subscribe.php';" aria-label="Subscribe">
       </div>
     </div>
   </div>
