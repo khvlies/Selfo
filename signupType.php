@@ -52,13 +52,24 @@
         max-width: 100%;
       }
     }
-    li{
-        display: block;
-        text-align: left;
-        color: black;
-        margin-left: 10px;
+    li {
+      display: block;
+      text-align: left;
+      color: black;
+      margin-left: 10px;
+    }
+    .checkout{
+        margin-top:20px; 
+        padding:10px 20px; 
+        font-size:16px; 
+        background-color:#097F94; 
+        color:white; 
+        border:none; 
+        border-radius:5px; 
+        cursor:pointer;
     }
   </style>
+  <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
   <div class="header">
@@ -70,26 +81,27 @@
   <div class="row">
     <div class="column">
       <div class="box-content">
-        <h2>Basic</h2>
+        <h2>Free</h2>
         <ul>
-            <li style="font-size:2em;"> RM0
-            <p>
-            <li> Features you'll get :
-            <li><i class="fa fa-check" style="font-size:20px"></i> 500+ Study Material
-            <li><i class="fa fa-check" style="font-size:20px"></i> Past year question including suggested answer
+          <li style="font-size:2em;"> RM0</li>
+          <p>
+          <li> Features you'll get :</li>
+          <li><i class="fa fa-check" style="font-size:20px"></i> 500+ Study Material</li>
+          <li><i class="fa fa-check" style="font-size:20px"></i> Past year question including suggested answer</li>
         </ul>
-      </div>
+        <input class="checkout" type="button" value="Subscribe" onclick="window.location.href='subscribe.php?plan=Free';" aria-label="Subscribe">      </div>
     </div>
     <div class="column">
       <div class="box-content">
         <h2>Premium</h2>
         <ul>
-            <li style="font-size:2em;"> RM65/month
-            <p>
-            <li> Everything in free, plus:
-            <li><i class="fa fa-check" style="font-size:20px"></i> Additional Notes
-            <li><i class="fa fa-check" style="font-size:20px"></i> Tutor
+          <li style="font-size:2em;"> RM65/month</li>
+          <p>
+          <li> Everything in free, plus:</li>
+          <li><i class="fa fa-check" style="font-size:20px"></i> Additional Notes</li>
+          <li><i class="fa fa-check" style="font-size:20px"></i> Tutor</li>
         </ul>
+        <input class="checkout" type="button" value="Subscribe" onclick="window.location.href='subscribe.php?plan=Premium';" aria-label="Subscribe">
       </div>
     </div>
   </div>

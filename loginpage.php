@@ -21,7 +21,7 @@
       padding: 30px;
       border-radius: 25px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      max-width: 350px;
+      max-width: 320px;
       width: 100%;
       text-align: center;
       margin-left: 20%;
@@ -76,15 +76,15 @@
   </div>
 	<div class="container">
     <div class="logo">
-		<img src="selfo.jpg" alt="Company Logo" style="width: 140px; height: auto;">
+		<img src="images/selfo.jpg" alt="Company Logo" style="width: 140px; height: auto;">
     </div>
     <p>
-    <form name="form" action="loginSession0.php" method="post">
+    <form id ="login-form" action="loginSession0.php" method="post">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Login">
     </form>
-		<input type="button" value="Sign Up" onclick="window.location.href='signUp.php';" aria-label="Sign Up">
+		<input type="button" value="Sign Up" onclick="window.location.href='signupType.php';" aria-label="Sign Up">
   </div>
 
   <!-- Check for error message in PHP session and display alert if exists -->

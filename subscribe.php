@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #097F94;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .header {
+      background-color: #fff;
+      padding: 5px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .logo img {
+      width: 70px;
+      height: auto;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      margin-top: 280px;
+      text-align: left;
+    }
+    input[type=text], input[type=email], input[type=tel] {
+      width: 100%;
+      padding: 15px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      box-sizing: border-box;
+    }
+    input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus {
+      border-color: #097F94;
+      outline: none;
+    }
+    hr {
+      border: 1px solid #097F94;
+      width: 100%;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #097F94;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: 1px solid #097F94;
+      border-radius: 15px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #ffffff;
+      color: #097F94;
+    }
+    .backbtn {
+      background-color: #054652;
+      border: 1px solid #054652;
+    }
+    .backbtn:hover {
+      background-color: white;
+      color: #054652;
+    }
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    .premium-notice {
+      color: red;
+      font-size: 1em;
+      margin-top: 15px;
+      text-align: center;
+    }
+    .free-notice {
+      color: green;
+      font-size: 1em;
+      margin-top: 15px;
+      text-align: center;
+    }
+    @media screen and (max-width: 300px) {
+      .backbtn, .confirmbtn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="images/selfo.jpg" alt="Company Logo">
+    </div>
+  </div>
+  <div class="container">
+    <form id="subscription-form" action="">
+      <div style="font-size:1.5em; color:#696666; text-align:center;">Subscribe to <span id="plan-name"></span> Plan</div>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" required>
+
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="pass"><b>Password</b></label>
+      <input type="text" placeholder="Enter Password" name="pass" required>
+
+      <label for="phoneno"><b>Phone Number</b></label>
+      <input type="tel" placeholder="Enter Phone Number" name="phoneno" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" name="email" required>
+
+      <div id="notice" class="free-notice" style="display:none;">
+        You are subscribing to the Free plan with no charges.
+      </div>
+
+      <div id="notice" class="premium-notice" style="display:none;">
+        You will be charged RM65/month for the Premium plan.
+      </div>
+
+      <div class="clearfix">
+        <button type="submit" class="confirmbtn">Confirm</button>
+        <button type="button" class="backbtn" onclick="window.location.href='signupType.php';">Back</button>
+      </div>
+    </form>
+
+    <div id="confirmation-message" class="confirmation" style="display:none;">
+      Subscription successful! Thank you for choosing the <span id="confirmed-plan"></span> plan.
+    </div>
+  </div>
+
+  <script>
+     // Get the query parameter from the URL
+     const urlParams = new URLSearchParams(window.location.search);
+    const plan = urlParams.get('plan');
+    document.getElementById('plan-name').innerText = plan;
+    document.getElementById('plan-input').value = plan;
+
+    // Show the appropriate notice based on the selected plan
+    if (plan === 'Premium') {
+      document.getElementById('premium-notice').style.display = 'block';
+    } else if (plan === 'Free') {
+      document.getElementById('free-notice').style.display = 'block';
+    }
+
+  </script>
+</body>
+</html>
