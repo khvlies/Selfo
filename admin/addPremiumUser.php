@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "educationdb";
+$database = "educationdb2";
 
 //create connection
 $connection = new mysqli($servername, $username, $password, $database);
@@ -59,7 +59,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "premium user added correctly";
 
-        header("location: /SLMS2/listPremiumUser.php");
+        header("location: listPremiumUser.php");
         exit;
 
     } while (false);
@@ -165,7 +165,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/SLMS2/listPremiumUser.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="listPremiumUser.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

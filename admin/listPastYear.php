@@ -26,7 +26,7 @@
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb";
+                $database = "educationdb2";
 
                 //create connection
                 $connection = new mysqli($servername, $username, $password, $database);
@@ -52,8 +52,8 @@
                     <td>$row[content_LinkHref]</th>
                     <td>$row[admin_id]</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/SLMS2/updatePastYear.php?paper_id=$row[paper_id]'>Update</a>
-                        <a class='btn btn-danger btn-sm' href='/SLMS2/deletePastYear.php?paper_id=$row[paper_id]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='updatePastYear.php?paper_id=$row[paper_id]'>Update</a>
+                        <a class='btn btn-danger btn-sm' href='deletePastYear.php?paper_id=$row[paper_id]'>Delete</a>
                     </td>
                 </tr>
                 ";

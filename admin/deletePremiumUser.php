@@ -5,7 +5,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "educationdb";
+$database = "educationdb2";
 
 // Database connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -31,7 +31,7 @@ try {
         // Check if any row was deleted
         if ($stmt->affected_rows > 0) {
             // Record deleted successfully, redirect to listPremiumUser.php
-            header("Location: /SLMS2/listPremiumUser.php");
+            header("Location: listPremiumUser.php");
             exit;
         } else {
             $errorMessage = "No record found with the specified ID.";
@@ -90,7 +90,7 @@ try {
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-secondary" href="/SLMS2/listPremiumUser.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-secondary" href="listPremiumUser.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

@@ -41,7 +41,7 @@ try {
     if ($stmt->affected_rows > 0) {
         $successMessage = "Record updated successfully.";
         // Redirect to listStudyMaterial.php after successful update
-        header("Location: /SLMS2/listStudyMaterial.php");
+        header("Location: listStudyMaterial.php");
         exit();
     } else {
         $errorMessage = "No record found with the specified ID.";
@@ -121,7 +121,7 @@ $errorMessage = "Error: " . $e->getMessage();
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/SLMS2/listStudyMaterial.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="listStudyMaterial.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

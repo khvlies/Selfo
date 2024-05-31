@@ -5,7 +5,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "educationdb";
+$database = "educationdb2";
 
 // Database connection
 $conn = new mysqli("localhost", "root", "", "educationdb");
@@ -45,7 +45,7 @@ try {
     if ($stmt->affected_rows > 0) {
         $successMessage = "Record updated successfully.";
         // Redirect to listTutor.php after successful update
-        header("Location: /SLMS2/listTutor.php");
+        header("Location: listTutor.php");
         exit();
     } else {
         $errorMessage = "No record found with the specified ID.";

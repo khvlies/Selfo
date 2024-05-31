@@ -9,7 +9,7 @@
 <body>
     <div class="container my-5">
         <h2>List of Basic User</h2>
-        <a class="btn btn-primary" href="/SLMS2/addBasicUser.php" role="button">New User</a>
+        <a class="btn btn-primary" href="addBasicUser.php" role="button">New User</a>
         <br>
         <table class="table">
             <thead>
@@ -30,7 +30,7 @@
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb";
+                $database = "educationdb2";
 
                 //create connection
                 $connection = new mysqli($servername, $username, $password, $database);
@@ -60,8 +60,8 @@
                     <td>$row[paper_id]</td>
                     <td>$row[admin_id]</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/SLMS2/updateBasicUser.php?basic_id=$row[basic_id]'>Update</a>
-                        <a class='btn btn-danger btn-sm' href='/SLMS2/deleteBasicUser.php?basic_id=$row[basic_id]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='updateBasicUser.php?basic_id=$row[basic_id]'>Update</a>
+                        <a class='btn btn-danger btn-sm' href='deleteBasicUser.php?basic_id=$row[basic_id]'>Delete</a>
                     </td>
                 </tr>
                 ";

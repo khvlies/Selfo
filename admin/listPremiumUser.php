@@ -9,7 +9,7 @@
 <body>
     <div class="container my-5">
         <h2>List of Premium User</h2>
-        <a class="btn btn-primary" href="/SLMS2/addPremiumUser.php" role="button">New User</a>
+        <a class="btn btn-primary" href="addPremiumUser.php" role="button">New User</a>
         <br>
         <table class="table">
             <thead>
@@ -31,7 +31,7 @@
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb";
+                $database = "educationdb2";
 
                 //create connection
                 $connection = new mysqli($servername, $username, $password, $database);
@@ -62,8 +62,8 @@
                     <td>$row[paper_id]</td>
                     <td>$row[tutor_id]</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/SLMS2/updatePremiumUser.php?premium_id=$row[premium_id]'>Update</a>
-                        <a class='btn btn-danger btn-sm' href='/SLMS2/deletePremiumUser.php?premium_id=$row[premium_id]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='updatePremiumUser.php?premium_id=$row[premium_id]'>Update</a>
+                        <a class='btn btn-danger btn-sm' href='deletePremiumUser.php?premium_id=$row[premium_id]'>Delete</a>
                     </td>
                 </tr>
                 ";

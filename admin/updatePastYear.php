@@ -5,10 +5,10 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "educationdb";
+$database = "educationdb2";
 
 // Database connection
-$conn = new mysqli("localhost", "root", "", "educationdb");
+$conn = new mysqli("localhost", "root", "", "educationdb2");
 
 $paper_id ="";
 $course_code ="";
@@ -41,7 +41,7 @@ try {
     if ($stmt->affected_rows > 0) {
         $successMessage = "Record updated successfully.";
         // Redirect to listPastYear.php after successful update
-        header("Location: /SLMS2/listPastYear.php");
+        header("Location: listPastYear.php");
         exit();
     } else {
         $errorMessage = "No record found with the specified ID.";
@@ -121,7 +121,7 @@ $errorMessage = "Error: " . $e->getMessage();
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/SLMS2/listPastYear.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="listPastYear.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

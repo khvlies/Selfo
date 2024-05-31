@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    verifyUser($dbconn, $uid, $password, 'admins', 'admin_id', 'admin_password', 'admin', 'adminMainpage.php');
+    verifyUser($dbconn, $uid, $password, 'admins', 'admin_id', 'admin_password', 'admin', 'admin/admin_page.php');
     verifyUser($dbconn, $uid, $password, 'tutor', 'tutor_id', 'tutor_password', 'tutor', 'tutorMainpage.php');
     verifyUser($dbconn, $uid, $password, 'premium_user', 'premium_id', 'premium_password', 'premium', 'premiumMainpage.php');
     verifyUser($dbconn, $uid, $password, 'basic_user', 'basic_id', 'basic_password', 'basic', 'basicMainpage.php');
