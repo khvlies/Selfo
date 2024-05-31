@@ -3,14 +3,13 @@ session_start();
 include("dbconn_selfo.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = mysqli_real_escape_string($dbconn, $_POST['username']);
+    $uid = mysqli_real_escape_string($dbconn, $_POST['uid']);
     $password = mysqli_real_escape_string($dbconn, $_POST['password']);
 
-    // Function to verify credentials and start session
-    function verifyUser($dbconn, $username, $password, $table, $id_field, $password_field, $session_name, $redirect_page) {
+    function verifyUser($dbconn, $uid, $password, $table, $id_field, $password_field, $session_name, $redirect_page) {
         $sql = "SELECT * FROM $table WHERE $id_field = ? AND $password_field = ?";
         $stmt = $dbconn->prepare($sql);
-        $stmt->bind_param('ss', $username, $password);
+        $stmt->bind_param('ss', $uid, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -23,23 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Check if user is an administrator
-    verifyUser($dbconn, $username, $password, 'admins', 'admin_id', 'admin_password', 'admin', 'adminMainpage.php');
+    verifyUser($dbconn, $uid, $password, 'admins', 'admin_id', 'admin_password', 'admin', 'adminMainpage.php');
+    verifyUser($dbconn, $uid, $password, 'tutor', 'tutor_id', 'tutor_password', 'tutor', 'tutorMainpage.php');
+    verifyUser($dbconn, $uid, $password, 'premium_user', 'premium_id', 'premium_password', 'premium', 'premiumMainpage.php');
+    verifyUser($dbconn, $uid, $password, 'basic_user', 'basic_id', 'basic_password', 'basic', 'basicMainpage.php');
 
-    // Check if user is a tutor
-    verifyUser($dbconn, $username, $password, 'tutor', 'tutor_id', 'tutor_password', 'tutor', 'tutorMainpage.php');
-
-    // Check if user is a premium user
-    verifyUser($dbconn, $username, $password, 'premium_user', 'premium_id', 'premium_password', 'premium', 'premiumMainpage.php');
-
-    // Check if user is a basic user
-    verifyUser($dbconn, $username, $password, 'basic_user', 'basic_id', 'basic_password', 'basic', 'basicMainpage.php');
-
-    // If no valid user found, redirect back to login page
     $_SESSION['error'] = "Invalid username or password.";
     header("Location: loginpage.php");
     exit();
 }
 
-mysqli_close($dbconn); // Close connection
+mysqli_close($dbconn);
 ?>
