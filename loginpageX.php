@@ -67,7 +67,7 @@
 <body>
   <div class="container">
     <div class="logo">
-      <img src="selfo.jpg" alt="Company Logo" style="width: 140px; height: auto;">
+      <img src="images/selfo.jpg" alt="Company Logo" style="width: 140px; height: auto;">
     </div>
     <div class="user-type-btns">
       <input type="button" value="User" onclick="setUserType('basic_user');">

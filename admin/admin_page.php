@@ -135,11 +135,11 @@ session_start();
   <ul>
     <li class="logo"><img src="images/selfo.jpg" alt="Company Logo"></li>
     <div class="menu-items">
-      <a class="active" href=" admin/listStudyMaterial.php">Study Material</a>
+      <a class="active" href=" SLMS2/admin/listStudyMaterial.php">Study Material</a>
       <a href=" admin/listPastYear.php">Past Year</a>
-      <a href=" admin/listBasicUser.php">Basic User</a>
-      <a href=" admin/listPremiumUser.php">Premium User</a>
-      <a href=" admin/listTutor.php">Tutor</a>
+      <a href=" SLMS2/admin/listBasicUser.php">Basic User</a>
+      <a href=" SLMS2/admin/listPremiumUser.php">Premium User</a>
+      <a href=" SLMS2/admin/listTutor.php">Tutor</a>
     </div>
     <li class="profile">
       <img src="images/profile.png" alt="Profile Icon"/>
