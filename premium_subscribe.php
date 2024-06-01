@@ -38,7 +38,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       max-width: 400px;
       width: 100%;
-      margin-top: 200px;
+      margin-top: 250px;
       text-align: left;
     }
     input[type=text], input[type=email], input[type=tel] {
@@ -100,15 +100,9 @@
 
   </style>
   <script>
-    function showPremiumNotice() {
-      var notice = document.querySelector('.premium-notice');
-      notice.style.display = 'block';
-    }
-
-    function showFreeNotice() {
-      var notice = document.querySelector('.free-notice');
-      notice.style.display = 'block';
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.free-notice').style.display = 'block';
+    });
   </script>
 </head>
 <body>
@@ -119,7 +113,7 @@
   </div>
   <div class="container">
     <form id="subscription-form" action="premium_process.php" method="post">
-      <div style="font-size:1.5em; color:#696666; text-align:center;">Subscribe to Free Plan</div>
+      <div style="font-size:1.5em; color:#696666; text-align:center;">Subscribe to Premium Plan</div>
       <hr>
       <label for="name"><b>Name</b></label>
       <input type="text" placeholder="Enter Name" name="premiumname" id="name" value="" required>
@@ -136,8 +130,8 @@
       <label for="email"><b>Email</b></label>
       <input type="email" placeholder="Enter Email" name="premiumemail" id="email" value="" required>
 
-      <div class="premium-notice" style="display:none;">
-        You are subscribing to the Premium plan with charge RM65 per month.
+      <div class="premium-notice">
+        You will be charged RM65/month for the Premium plan.
       </div>
       <div class="clearfix">
         <button type="submit" class="confirmbtn" name="add premium" value="New Premium Account">Confirm</button>

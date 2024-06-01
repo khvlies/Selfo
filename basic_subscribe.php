@@ -130,7 +130,7 @@
       <label for="email"><b>Email</b></label>
       <input type="email" placeholder="Enter Email" name="basicemail" id="email" value="" required>
 
-      <div class="free-notice" style="display:none;">
+      <div class="free-notice">
         You are subscribing to the Free plan with no charges.
       </div>
       <div class="clearfix">
