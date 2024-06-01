@@ -92,18 +92,24 @@
       margin-top: 15px;
       text-align: center;
     }
-    .free-notice {
-      color: green;
-      font-size: 1em;
-      margin-top: 15px;
-      text-align: center;
-    }
     @media screen and (max-width: 300px) {
       .backbtn, .confirmbtn {
         width: 100%;
       }
     }
+
   </style>
+  <script>
+    function showPremiumNotice() {
+      var notice = document.querySelector('.premium-notice');
+      notice.style.display = 'block';
+    }
+
+    function showFreeNotice() {
+      var notice = document.querySelector('.free-notice');
+      notice.style.display = 'block';
+    }
+  </script>
 </head>
 <body>
   <div class="header">
@@ -112,29 +118,29 @@
     </div>
   </div>
   <div class="container">
-    <form id="subscription-form" action="basic_process.php" method="post">
+    <form id="subscription-form" action="premium_process.php" method="post">
       <div style="font-size:1.5em; color:#696666; text-align:center;">Subscribe to Free Plan</div>
       <hr>
       <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter Name" name="basicname" id="name" value="" required>
+      <input type="text" placeholder="Enter Name" name="premiumname" id="name" value="" required>
 
       <label for="uid"><b>User ID</b></label>
-      <input type="text" placeholder="Enter User ID" name="basicid" id="uid" value="" required>
+      <input type="text" placeholder="Enter User ID" name="premiumid" id="uid" value="" required>
 
       <label for="pass"><b>Password</b></label>
-      <input type="text" placeholder="Enter Password" name="basicpass" id="pass" value="" required>
+      <input type="text" placeholder="Enter Password" name="premiumpass" id="pass" value="" required>
 
       <label for="phoneno"><b>Phone Number</b></label>
-      <input type="tel" placeholder="Enter Phone Number" name="basicphone" id="phoneno"  value="" required>
+      <input type="tel" placeholder="Enter Phone Number" name="premiumphone" id="phoneno"  value="" required>
 
       <label for="email"><b>Email</b></label>
-      <input type="email" placeholder="Enter Email" name="basicemail" id="email" value="" required>
+      <input type="email" placeholder="Enter Email" name="premiumemail" id="email" value="" required>
 
-      <div class="free-notice" style="display:none;">
-        You are subscribing to the Free plan with no charges.
+      <div class="premium-notice" style="display:none;">
+        You are subscribing to the Premium plan with charge RM65 per month.
       </div>
       <div class="clearfix">
-        <button type="submit" class="confirmbtn" name="add basic" value="New Basic Account">Confirm</button>
+        <button type="submit" class="confirmbtn" name="add premium" value="New Premium Account">Confirm</button>
         <button type="button" class="backbtn" onclick="window.location.href='signupType.php';">Cancel</button>
       </div>
     </form>
