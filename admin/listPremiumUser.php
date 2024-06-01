@@ -105,7 +105,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 130px auto 20px;
     }
     h2 {
@@ -122,11 +122,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
     }
     table {
       margin-top: 20px;
-      font-size: 0.8em;
+      font-size: 0.9em;
     }
     th, td {
       text-align: center;
       vertical-align: middle;
+      border: 1px solid #097F94;
     }
     </style>
 </head>
@@ -146,7 +147,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <a href="profilepage.php"><?php echo htmlspecialchars($admin_name); ?></a>
         </li>
     </ul>
-    <div class="container">
+    <div class="container" style="">
         <h2>List of Premium User</h2>
         <a class="btn btn-primary" href="addPremiumUser.php" role="button">New User</a>
         <br>
@@ -202,6 +203,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <td>$row[tutor_id]</td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='updatePremiumUser.php?premium_id=$row[premium_id]'>Update</a>
+                        <span></span>
                         <a class='btn btn-danger btn-sm' href='deletePremiumUser.php?premium_id=$row[premium_id]'>Delete</a>
                     </td>
                 </tr>

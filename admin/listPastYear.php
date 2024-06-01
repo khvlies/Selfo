@@ -125,6 +125,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     th, td {
       text-align: center;
       vertical-align: middle;
+      border: 1px solid #097F94;
     }
     </style>
 </head>
@@ -145,14 +146,15 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </li>
     </ul>
     <div class="container">
-        <h2>List of Past Year Papers</h2>
+        <h2>List Past Year Papers</h2>
         <a class="btn btn-primary" href="addPastYear.php" role="button">Add Past Year Paper</a>
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
                     <th>PAPER ID</th>
                     <th>COURSE CODE</th>
-                    <th>CONTENT</th>
+                    <th>PAST YEAR PAPER</th>
+                    <th>ANSWER PAPER</th>
                     <th>ADMIN ID</th>
                     <th>OPTIONS</th>
                 </tr>
@@ -162,7 +164,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb2";
+                $database = "educationdb";
 
                 // Create connection
                 $connection = new mysqli($servername, $username, $password, $database);
@@ -185,7 +187,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     echo "<tr>
                     <td>" . htmlspecialchars($row['paper_id'], ENT_QUOTES, 'UTF-8') . "</td>
                     <td>" . htmlspecialchars($row['course_code'], ENT_QUOTES, 'UTF-8') . "</td>
-                    <td><a href='" . htmlspecialchars($row['content_LinkHref'], ENT_QUOTES, 'UTF-8') . "' target='_blank'>View</a></td>
+                    <td><a href='" . htmlspecialchars($row['content_LinkHref'], ENT_QUOTES, 'UTF-8') . "' target='_blank'>Download</a></td>
+                    <td><a href='" . htmlspecialchars($row['answer_LinkHref'], ENT_QUOTES, 'UTF-8') . "' target='_blank'>Download</a></td>
                     <td>" . htmlspecialchars($row['admin_id'], ENT_QUOTES, 'UTF-8') . "</td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='updatePastYear.php?paper_id=" . htmlspecialchars($row['paper_id'], ENT_QUOTES, 'UTF-8') . "'>Update</a>

@@ -127,6 +127,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     th, td {
       text-align: center;
       vertical-align: middle;
+      border: 1px solid #097F94;
     }
     </style>
 </head>
