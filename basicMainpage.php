@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+$basic_name = isset($_SESSION['basic_name']) ? $_SESSION['basic_name'] : 'Basic User';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +18,6 @@ session_start();
       background-color: #097F94;
     }
     .menu {
-      background-color: #097F94;
       padding: 50px 0;
       text-align: center;
     }
@@ -33,7 +34,6 @@ session_start();
       list-style-type: none;
       margin: 0;
       padding: 0;
-      overflow: hidden;
       background-color: #fff;
       position: fixed;
       top: 0;
@@ -89,7 +89,7 @@ session_start();
     }
     .content {
       padding: 20px;
-      margin-top: 80px;
+      margin-top: 100px; /* Increase margin-top to accommodate dropdown */
       min-height: calc(100vh - 80px);
     }
     .row {
@@ -129,6 +129,7 @@ session_start();
         min-width: 100%;
       }
     }
+    
   </style>
 </head>
 <body>
@@ -142,8 +143,8 @@ session_start();
       <a href="#">Tutor</a>
     </div>
     <li class="profile">
-      <img src="images/profile.png" alt="Profile Icon"/>
-      <a href="#profile">Username</a>
+      <img src="images/profile.png" alt="Profile Icon">
+      <a href="profilepage.php"><?php echo htmlspecialchars($basic_name); ?></a>
     </li>
   </ul>
   <div class="content">
@@ -168,5 +169,8 @@ session_start();
       </div>
     </div>
   </div>
+
+</script>
+
 </body>
 </html>

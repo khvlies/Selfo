@@ -2,7 +2,6 @@
 session_start();
 
 $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin';
-$current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +18,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
       background-color: #097F94;
     }
     .menu {
-      background-color: #097F94;
       padding: 50px 0;
       text-align: center;
     }
@@ -30,13 +28,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
     }
     .menu a:hover {
       background-color: #ddd;
-      color: #fff;
     }
     ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
-      overflow: hidden;
       background-color: #fff;
       position: fixed;
       top: 0;
@@ -76,6 +72,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
       display: flex;
       align-items: center;
       padding-right: 20px;
+      z-index: 2002;
     }
     .profile img {
       width: 50px;
@@ -83,17 +80,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
       border-radius: 50%;
       margin-right: 10px;
     }
-    .profile a {
-      color: black;
-      text-decoration: none;
-    }
-    .profile a:hover {
-      color: #097F94;
-    }
     .content {
       padding: 20px;
       margin-top: 80px;
       min-height: calc(100vh - 80px);
+      position: relative;
+      z-index: 999;
     }
     .row {
       display: flex;
@@ -132,6 +124,44 @@ $current_page = basename($_SERVER['PHP_SELF']);
         min-width: 100%;
       }
     }
+    .dropbtn {
+      color: black;
+      background-color: white;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      z-index: 2000;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 2001;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #097F94;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .dropdown:hover .dropbtn {
+      color: #097F94;
+    }
   </style>
 </head>
 <body>
@@ -139,38 +169,47 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <li class="logo"><img src="../images/selfo.jpg" alt="Company Logo"></li>
     <div class="menu-items">
       <a class="active" href="admin_page.php">Home</a>
-      <a href=" listStudyMaterial.php">Study Material</a>
-      <a href=" listPastYear.php">Past Year</a>
-      <a href=" listBasicUser.php">Basic User</a>
-      <a href=" listPremiumUser.php">Premium User</a>
-      <a href=" listTutor.php">Tutor</a>
+      <a href="listStudyMaterial.php">Study Material</a>
+      <a href="listPastYear.php">Past Year</a>
+      <a href="listBasicUser.php">Basic User</a>
+      <a href="listPremiumUser.php">Premium User</a>
+      <a href="listTutor.php">Tutor</a>
     </div>
     <li class="profile">
       <img src="../images/profile.png" alt="Profile Icon"/>
-      <a href="profilepage.php"><?php echo htmlspecialchars($admin_name); ?></a>
+      <div class="dropdown">
+        <button class="dropbtn"><?php echo htmlspecialchars($admin_name); ?></button>
+        <div class="dropdown-content">
+          <a href="../profilepage.php">Profile</a>
+          <a href="#">Settings</a>
+          <a href="../loginpage.php">Logout</a>
+        </div>
+      </div>
     </li>
   </ul>
+  
   <div class="content">
     <div class="row">
       <div class="column">
         <div id="Study Material" class="box-content">
-        <a href="listStudyMaterial.php"><img src="../images/studymaterial.png" alt="Book Icon"></a>
+          <img src="../images/studymaterial.png" alt="Book Icon">
           <h2>Study Material</h2>
         </div>
       </div>
       <div class="column">
-        <div id="Past Year" class="box-content" >
-        <a href="listPastYear.php"><img src="../images/pastyear.png" alt="Question Icon"></a>
+        <div id="Past Year" class="box-content">
+          <img src="../images/pastyear.png" alt="Question Icon">
           <h2>Past Year</h2>
         </div>
       </div>
       <div class="column">
         <div id="Tutor" class="box-content">
-        <a href="#listTutor.php"><img src="../images/tutor.png" alt="Chatbox Icon"></a>
+          <img src="../images/tutor.png" alt="Chatbox Icon">
           <h2>Tutor</h2>
         </div>
       </div>
     </div>
   </div>
+
 </body>
 </html>
