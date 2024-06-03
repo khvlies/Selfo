@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,7 +140,7 @@
 <body>
   <div class="header">
     <div class="logo">
-      <img src="selfo.jpg" alt="Company Logo">
+      <img src="images/selfo.jpg" alt="Company Logo">
     </div>
   </div>
 
@@ -151,20 +152,20 @@
 
   <div class="main-content">
     <div class="profile-info">
-      <img src="profile.png" alt="Profile Picture">
+      <img src="images/profile.png" alt="Profile Picture">
       <h2>John Doe</h2>
       <form action="/update_profile" method="post">
         <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter Name" name="name" required value="John Doe">
+        <input type="text" placeholder="Enter Name" name="name" required value="">
         
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required value="johndoe">
+        <label for="uname"><b>User ID</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required value="">
         
-        <label for="phoneno"><b>Phone No</b></label>
-        <input type="tel" placeholder="Enter Phone No" name="phoneno" required value="+1234567890">
+        <label for="phoneno"><b>Phone Number</b></label>
+        <input type="tel" placeholder="Enter Phone Number" name="phoneno" required value="">
         
         <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="email" required value="johndoe@example.com">
+        <input type="email" placeholder="Enter Email" name="email" required value="">
         
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
