@@ -153,7 +153,7 @@
   <div class="main-content">
     <div class="profile-info">
       <img src="images/profile.png" alt="Profile Picture">
-      <h2>John Doe</h2>
+      <h2>Khalies</h2>
       <form action="/update_profile" method="post">
         <label for="name"><b>Name</b></label>
         <input type="text" placeholder="Enter Name" name="name" required value="">
