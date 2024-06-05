@@ -12,7 +12,8 @@ echo '</pre>';*/
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Page</title>
+  <link rel="icon" href="images/icon.png"/>
+  <title>Profile</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -143,7 +144,7 @@ echo '</pre>';*/
 <body>
   <div class="header">
     <div class="logo">
-      <img src="images/selfo.jpg" alt="Company Logo">
+      <a href="adminpage.php"><img src="images/selfo.jpg" alt="Company Logo"></a>
     </div>
   </div>
 
