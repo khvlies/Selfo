@@ -1,6 +1,6 @@
 <?php
 session_start();
-$admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin';
+$basic_name = isset($_SESSION['basic_name']) ? $_SESSION['basic_name'] : 'Basic User';
 ?>
 
 <!DOCTYPE html>
@@ -10,24 +10,21 @@ $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin'
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="images/icon.png"/>
   <link rel="icon" href="images/icon.png"/>
-  <title>Administrator</title>
+  <title>Basic User</title>
   <link rel="stylesheet" href="css/style3.css">
 </head>
 <body>
   <header>
     <div class="logo"><img src="images/selfo.jpg" alt="Company Logo"></div>
     <nav>
-      <a class="active" href="adminPage.php">Home</a>
-      <a href="listStudyMaterial.php">Study Material</a>
-      <a href="listPastYear.php">Past Year</a>
-      <a href="listBasicUser.php">Basic User</a>
-      <a href="listPremiumUser.php">Premium User</a>
-      <a href="listTutor.php">Tutor</a>
+      <a class="active" href="basicMainpage.php">Home</a>
+      <a href="#">Study Material</a>
+      <a href="#">Past Year</a>
     </nav>
     <div class="dropdown">
       <div class="profile">
         <img src="images/profile.png" alt="Profile Icon"/>
-        <button class="dropbtn"><?php echo htmlspecialchars($admin_name); ?></button>
+        <button class="dropbtn"><?php echo htmlspecialchars($basic_name); ?></button>
       </div>
       <div class="dropdown-content">
         <a href="profilepage.php">Profile</a>

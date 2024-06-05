@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,39 +9,25 @@ session_start();
   <link rel="stylesheet" href="css/style3.css">
 </head>
 <body>
-  <ul>
-    <li class="logo"><img src="images/selfo.jpg" alt="Company Logo"></li>
-    <div class="menu-items">
-      <a href=" /SLMS2/listAdditionalNotes.php">Additional Notes</a>
-      <a href=" /SLMS2/listOnlineSession.php">Online Session</a>
-      <a href=" /SLMS2/listPU.php">Student Details</a>
-    </div>
-    <li class="profile">
-      <img src="images/profile.png" alt="Profile Icon"/>
-      <a href=" /SLMS2/profile.php">Username</a>
-    </li>
-    <li class="profile">
-      <img src="images/logout.png" alt="Logout Icon"/>
-      <a href=" /SLMS2/logout.php">Log Out</a>
-    </li>
-  </ul>
+  <?php include('nav-T.php'); ?>
+
   <div class="content">
     <div class="row">
       <div class="column">
         <div id="Additinal Notes" class="box-content">
-          <img src="images/additionalNotes.jpg" alt="Book Icon">
+          <a href=""><img src="images/additionalNotes.jpg" alt="Book Icon"></a>
           <h2>Additional Notes</h2>
         </div>
       </div>
       <div class="column">
         <div id="Online Session" class="box-content">
-          <img src="images/onlineSession.jpg" alt="People Icon">
+          <a href=""><img src="images/onlineSession.jpg" alt="People Icon"></a>
           <h2>Online Session</h2>
         </div>
       </div>
       <div class="column">
         <div id="Premium User" class="box-content">
-          <img src="images/profile.png" alt="Profile Icon">
+          <a href=""><img src="images/profile.png" alt="Profile Icon"></a>
           <h2>Student Details</h2>
         </div>
       </div>

@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     verifyUser($dbconn, $uid, $password, 'admin', 'admin_id', 'admin_password', 'admin', 'adminPage.php');
     verifyUser($dbconn, $uid, $password, 'tutor', 'tutor_id', 'tutor_password', 'tutor', 'tutor_page.php');
-    verifyUser($dbconn, $uid, $password, 'premium_user', 'premium_id', 'premium_password', 'premium', 'premiumHome2.php');
+    verifyUser($dbconn, $uid, $password, 'premium_user', 'premium_id', 'premium_password', 'premium', 'premiumMainpage.php');
     verifyUser($dbconn, $uid, $password, 'basic_user', 'basic_id', 'basic_password', 'basic', 'basicMainpage.php');
 
     $_SESSION['error'] = "Invalid username or password.";

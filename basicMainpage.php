@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,32 +9,19 @@ session_start();
   <link rel="stylesheet" href="css/style3.css">
 </head>
 <body>
-  <ul>
-    <li class="logo"><img src="images/selfo.jpg" alt="Company Logo"></li>
-    <div class="menu-items">
-      <a href=" /SLMS2/listSM.php">Study Material</a>
-      <a href=" /SLMS2/listPY.php">Past Year</a>
-    </div>
-    <li class="profile">
-      <img src="images/profile.png" alt="Profile Icon"/>
-      <a href=" /SLMS2/profile.php">Username</a>
-    </li>
-    <li class="profile">
-      <img src="images/logout.png" alt="Logout Icon"/>
-      <a href=" /SLMS2/logout.php">Log Out</a>
-    </li>
-  </ul>
+  <?php include('nav-B.php'); ?>
+
   <div class="content">
     <div class="row">
       <div class="column">
         <div id="Study Material" class="box-content">
-          <img src="images/studymaterial.png" alt="Book Icon">
+          <a href="#"><img src="images/studymaterial.png" alt="Book Icon"></a>
           <h2>Study Material</h2>
         </div>
       </div>
       <div class="column">
         <div id="Past Year" class="box-content">
-          <img src="images/pastyear.png" alt="Question Icon">
+          <a href="#"><img src="images/pastyear.png" alt="Question Icon"></a>
           <h2>Past Year</h2>
         </div>
       </div>
