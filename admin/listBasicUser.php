@@ -158,9 +158,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <th>BASIC USER NAME</th>
                     <th>BASIC USER PHONE</th>
                     <th>BASIC USER EMAIL</th>
-                    <th>STUDY MATERIAL ID</th>
-                    <th>PAST YEAR PAPER ID</th>
-                    <th>ADMIN ID</th>
                     <th>OPTIONS</th>
                 </tr>
             </thead>
@@ -169,7 +166,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "selfo";
+                $database = "selfodb";
 
                 //create connection
                 $connection = new mysqli($servername, $username, $password, $database);
@@ -195,9 +192,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <td>$row[basic_name]</td>
                     <td>$row[basic_phone]</td>
                     <td>$row[basic_email]</td>
-                    <td>$row[study_id]</td>
-                    <td>$row[paper_id]</td>
-                    <td>$row[admin_id]</td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='updateBasicUser.php?basic_id=$row[basic_id]'>Update</a>
                         <a class='btn btn-danger btn-sm' href='deleteBasicUser.php?basic_id=$row[basic_id]'> Delete </a>

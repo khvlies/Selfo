@@ -155,7 +155,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <th>COURSE CODE</th>
                     <th>PAST YEAR PAPER</th>
                     <th>ANSWER PAPER</th>
-                    <th>ADMIN ID</th>
                     <th>OPTIONS</th>
                 </tr>
             </thead>
@@ -164,7 +163,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb";
+                $database = "selfodb";
 
                 // Create connection
                 $connection = new mysqli($servername, $username, $password, $database);

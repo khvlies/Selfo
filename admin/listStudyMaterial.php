@@ -154,7 +154,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <th>STUDY MATERIAL ID</th>
                     <th>COURSE CODE</th>
                     <th>CONTENT</th>
-                    <th>ADMIN ID</th>
                     <th>OPTIONS</th>
                 </tr>
             </thead>
@@ -163,7 +162,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb";
+                $database = "selfodb";
 
                 // Create connection
                 $connection = new mysqli($servername, $username, $password, $database);
@@ -187,7 +186,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <td>" . htmlspecialchars($row['study_id'], ENT_QUOTES, 'UTF-8') . "</td>
                     <td>" . htmlspecialchars($row['course_code'], ENT_QUOTES, 'UTF-8') . "</td>
                     <td><a href='" . htmlspecialchars($row['pdf_link'], ENT_QUOTES, 'UTF-8') . "' target='_blank'>View</a></td>
-                    <td>" . htmlspecialchars($row['admin_id'], ENT_QUOTES, 'UTF-8') . "</td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='updateStudyMaterial.php?study_id=" . htmlspecialchars($row['study_id'], ENT_QUOTES, 'UTF-8') . "'>Update</a>
                         <a class='btn btn-danger btn-sm' href='deleteStudyMaterial.php?study_id=" . htmlspecialchars($row['study_id'], ENT_QUOTES, 'UTF-8') . "'>Delete</a>

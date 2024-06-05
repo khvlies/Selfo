@@ -159,10 +159,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <th>PREMIUM USER NAME</th>
                     <th>PREMIUM USER PHONE</th>
                     <th>PREMIUM USER EMAIL</th>
-                    <th>ADMIN ID</th>
-                    <th>STUDY MATERIAL ID</th>
-                    <th>PAST YEAR PAPER ID</th>
-                    <th>TUTOR ID</th>
                     <th>OPTIONS</th>
                 </tr>
             </thead>
@@ -171,7 +167,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb2";
+                $database = "selfodb";
 
                 //create connection
                 $connection = new mysqli($servername, $username, $password, $database);
@@ -197,10 +193,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <td>$row[premium_name]</td>
                     <td>$row[premium_phone]</td>
                     <td>$row[premium_email]</td>
-                    <td>$row[admin_id]</td>
-                    <td>$row[study_id]</td>
-                    <td>$row[paper_id]</td>
-                    <td>$row[tutor_id]</td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='updatePremiumUser.php?premium_id=$row[premium_id]'>Update</a>
                         <span></span>
