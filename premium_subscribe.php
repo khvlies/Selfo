@@ -112,7 +112,7 @@
     </div>
   </div>
   <div class="container">
-    <form id="subscription-form" action="premium_process.php" method="post">
+    <form id="subscription-form" action="payment.php" method="post">
       <div style="font-size:1.5em; color:#696666; text-align:center;">Subscribe to Premium Plan</div>
       <hr>
       <label for="name"><b>Name</b></label>
