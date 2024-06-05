@@ -47,24 +47,33 @@
 </head>
 <body>
 
-    <div class="payment-form">
-        <h2>Payment Form</h2>
-        <form action="payment_process.php" method="POST">
-            <div class="form-group">
-                <label for="cardName">Cardholder Name</label>
-                <input type="text" id="cardName" name="cardName" required>
-            </div>
-            <div class="form-group">
-                <label for="cardNumber">Card Number</label>
-                <input type="text" id="cardNumber" name="cardNumber" required>
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount</label>
-                <input type="number" id="amount" name="amount" value="65.00" readonly>
-            </div>
-            <button type="submit" class="btn">Submit Payment</button>
-        </form>
-    </div>
+<div class="payment-form">
+    <h2>Payment Form</h2>
+    <form action="payment_process.php" method="POST">
+        <?php
+        session_start();
+        // Save user details in session
+        $_SESSION['premiumname'] = $_POST['premiumname'];
+        $_SESSION['premiumid'] = $_POST['premiumid'];
+        $_SESSION['premiumpass'] = $_POST['premiumpass'];
+        $_SESSION['premiumphone'] = $_POST['premiumphone'];
+        $_SESSION['premiumemail'] = $_POST['premiumemail'];
+        ?>
+        <div class="form-group">
+            <label for="cardName">Cardholder Name</label>
+            <input type="text" id="cardName" name="cardName" required>
+        </div>
+        <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" value="65.00" readonly>
+        </div>
+        <button type="submit" class="btn">Submit Payment</button>
+    </form>
+</div>
 
 </body>
 </html>
