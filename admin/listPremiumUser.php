@@ -13,7 +13,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
     <style>
-        body {
+      body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -37,7 +37,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
       list-style-type: none;
       margin: 0;
       padding: 0;
-      overflow: hidden;
       background-color: #fff;
       position: fixed;
       top: 0;
@@ -84,13 +83,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
       border-radius: 50%;
       margin-right: 10px;
     }
-    .profile a {
-      color: black;
-      text-decoration: none;
-    }
-    .profile a:hover {
-      color: #097F94;
-    }
+  
     @media screen and (max-width: 600px) {
       .profile img {
         width: 40px;
