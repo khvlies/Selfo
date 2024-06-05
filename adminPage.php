@@ -16,11 +16,11 @@ session_start();
   <ul>
     <li class="logo"><img src="images/selfo.jpg" alt="Company Logo"></li>
     <div class="menu-items">
-      <a href=" /SLMS2/listStudyMaterial.php">Study Material</a>
-      <a href=" /SLMS2/listPastYear.php">Past Year</a>
-      <a href=" /SLMS2/listBasicUser.php">Basic User</a>
-      <a href=" /SLMS2/listPremiumUser.php">Premium User</a>
-      <a href=" /SLMS2/listTutor.php">Tutor</a>
+      <a href="listStudyMaterial.php">Study Material</a>
+      <a href="listPastYear.php">Past Year</a>
+      <a href="listBasicUser.php">Basic User</a>
+      <a href="listPremiumUser.php">Premium User</a>
+      <a href="listTutor.php">Tutor</a>
     </div>
     <li class="profile">
       <img src="images/logout.png" alt="Logout Icon"/>
