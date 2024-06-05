@@ -28,7 +28,6 @@
                 <tr>
                     <th>ID</th>
                     <th>BASIC USER NAME</th>
-                    <th>BASIC USER PASSWORD</th>
                     <th>BASIC USER PHONE</th>
                     <th>BASIC USER EMAIL</th>
                     <th>OPTIONS</th>
@@ -62,7 +61,6 @@
                     echo "<tr>
                     <td>$row[basic_id]</td>
                     <td>$row[basic_name]</td>
-                    <td>$row[basic_password]</th>
                     <td>$row[basic_phone]</td>
                     <td>$row[basic_email]</td>
                     <td>
