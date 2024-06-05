@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin';
 ?>
 
@@ -192,19 +191,19 @@ $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin'
     <div class="row">
       <div class="column">
         <div id="Study Material" class="box-content">
-          <img src="../images/studymaterial.png" alt="Book Icon">
+        <a href="listStudyMaterial.php"><img src="../images/studymaterial.png" alt="Book Icon"></a>
           <h2>Study Material</h2>
         </div>
       </div>
       <div class="column">
         <div id="Past Year" class="box-content">
-          <img src="../images/pastyear.png" alt="Question Icon">
+        <a href="listPastYear.php"><img src="../images/pastyear.png" alt="Question Icon"></a>
           <h2>Past Year</h2>
         </div>
       </div>
       <div class="column">
         <div id="Tutor" class="box-content">
-          <img src="../images/tutor.png" alt="Chatbox Icon">
+        <a href="#"><img src="../images/tutor.png" alt="Chatbox Icon"></a>
           <h2>Tutor</h2>
         </div>
       </div>

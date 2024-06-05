@@ -159,7 +159,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <th>TUTOR NAME</th>
                     <th>TUTOR PHONE</th>
                     <th>TUTOR EMAIL</th>
-                    <th>ADMIN ID</th>
                     <th>OPTIONS</th>
                 </tr>
             </thead>
@@ -168,7 +167,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb2";
+                $database = "selfodb";
 
                 //create connection
                 $connection = new mysqli($servername, $username, $password, $database);
@@ -194,7 +193,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <td>$row[tutor_name]</td>
                     <td>$row[tutor_phone]</td>
                     <td>$row[tutor_email]</td>
-                    <td>$row[admin_id]</td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='updateTutor.php?tutor_id=$row[tutor_id]'>Update</a>
                         <a class='btn btn-danger btn-sm' href='deleteTutor.php?tutor_id=$row[tutor_id]'>Delete</a>
