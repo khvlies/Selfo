@@ -169,7 +169,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
-                $database = "educationdb2";
+                $database = "selfo";
 
                 //create connection
                 $connection = new mysqli($servername, $username, $password, $database);
