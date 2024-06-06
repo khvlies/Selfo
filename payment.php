@@ -54,7 +54,6 @@
         session_start();
         // Save user details in session
         $_SESSION['premiumname'] = $_POST['premiumname'];
-        $_SESSION['premiumid'] = $_POST['premiumid'];
         $_SESSION['premiumpass'] = $_POST['premiumpass'];
         $_SESSION['premiumphone'] = $_POST['premiumphone'];
         $_SESSION['premiumemail'] = $_POST['premiumemail'];

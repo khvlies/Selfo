@@ -1,23 +1,16 @@
 <?php
 include("dbconn_selfo.php");
 
-$b_id = mysqli_real_escape_string($dbconn, $_REQUEST['basicid']);
 $b_pass = mysqli_real_escape_string($dbconn, $_REQUEST['basicpass']);
 $b_name = mysqli_real_escape_string($dbconn, $_REQUEST['basicname']);
 $b_phone = mysqli_real_escape_string($dbconn, $_REQUEST['basicphone']);
 $b_email = mysqli_real_escape_string($dbconn, $_REQUEST['basicemail']);
 
-$sqlInsertBasic = "INSERT INTO basic_user (basic_id, basic_password, basic_name, basic_phone, basic_email) VALUES (?, ?, ?, ?, ?)";
+$sqlInsertBasic = "INSERT INTO basic_user ( basic_password, basic_name, basic_phone, basic_email) VALUES (?, ?, ?, ?)";
 $stmtBasic = $dbconn->prepare($sqlInsertBasic);
-$stmtBasic->bind_param("sssss", $b_id, $b_pass, $b_name, $b_phone, $b_email);
+$stmtBasic->bind_param("sssss", $b_pass, $b_name, $b_phone, $b_email);
 
 if ($stmtBasic->execute()) {
-    $sqlInsertLogin = "INSERT INTO login (PASSWORD,ROLE) VALUES ( ?, ?)";
-    $stmtLogin = $dbconn->prepare($sqlInsertLogin);
-    $role = 'basic';
-    $stmtLogin->bind_param("ss", $b_pass, $role);
-    
-    if ($stmtLogin->execute()) {
         echo'<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -63,7 +56,7 @@ if ($stmtBasic->execute()) {
     }
     
     $stmtLogin->close();
-} else {
+else {
     echo "Error: " . $stmtBasic->error;
 }
 

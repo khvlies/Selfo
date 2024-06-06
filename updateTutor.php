@@ -65,7 +65,7 @@ try {
         if ($stmt->affected_rows > 0) {
             $successMessage = "Record updated successfully.";
             // Redirect to listTutor.php after successful update
-            header("Location: /SLMS2/listTutor.php");
+            header("Location: listTutor.php");
             exit();
         } else {
             $errorMessage = "No record found with the specified ID.";

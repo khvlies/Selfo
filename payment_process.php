@@ -45,9 +45,9 @@
             $b_email = $_SESSION['premiumemail'];
 
             // Insert premium user details into the database
-            $sqlInsert = "INSERT INTO premium_user (premium_name, premium_id, premium_password, premium_phone, premium_email) VALUES (?, ?, ?, ?, ?)";
+            $sqlInsert = "INSERT INTO premium_user (premium_name, premium_password, premium_phone, premium_email) VALUES (?, ?, ?, ?)";
             $stmt2 = $dbconn->prepare($sqlInsert);
-            $stmt2->bind_param("sssss", $b_name, $b_id, $b_pass, $b_phone, $b_email);
+            $stmt2->bind_param("sssss", $b_name, $b_pass, $b_phone, $b_email);
             
             if ($stmt2->execute()) {
                 echo "<h2>Payment Processed</h2>";

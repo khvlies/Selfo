@@ -18,7 +18,7 @@ $successMessage = "";
 try {
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if (!isset($_GET["addN_id"])) {
-            header("Location: /SLMS2/listAdditionalNotes.php");
+            header("Location: listAdditionalNotes.php");
             exit;
         }
 
@@ -32,7 +32,7 @@ try {
         $row = $result->fetch_assoc();
 
         if (!$row) {
-            header("Location: /SLMS2/listAdditonalNotes.php");
+            header("Location: listAdditonalNotes.php");
             exit;
         }
 
@@ -86,7 +86,7 @@ try {
             if ($stmt->affected_rows > 0) {
                 $successMessage = "Record updated successfully.";
                 // Redirect to listAdditionalNotes.php after successful update
-                header("Location: /SLMS2/listAdditionalNotes.php");
+                header("Location: listAdditionalNotes.php");
                 exit();
             } else {
                 $errorMessage = "No record found with the specified ID.";
@@ -157,7 +157,7 @@ try {
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/SLMS2/listAdditionalNotes.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="listAdditionalNotes.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>
