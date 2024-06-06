@@ -16,11 +16,12 @@ $tutor_name = isset($_SESSION['tutor_name']) ? $_SESSION['tutor_name'] : 'Tutor'
   <header>
     <div class="logo"><img src="images/selfo.jpg" alt="Company Logo"></div>
     <nav>
+    <div class="menu-items">
       <a class="active" href="tutor_page.php">Home</a>
-      <a href="#">Additional Notes</a>
-      <a href="#">Online Session</a>
-      <a href="#">Student Details</a>
-      <a href="#">Online Session</a>
+      <a href="listAdditionalNotes.php">Additional Notes</a>
+      <a href="listOnlineSession.php">Online Session</a>
+      <a href="listPU.php">Premium User</a>
+    </div>
     </nav>
     <div class="dropdown">
       <div class="profile">
