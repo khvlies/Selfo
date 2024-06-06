@@ -17,10 +17,10 @@ $premium_name = isset($_SESSION['premium_name']) ? $_SESSION['premium_name'] : '
     <div class="logo"><img src="images/selfo.jpg" alt="Company Logo"></div>
     <nav>
       <a class="active" href="premiumMainpage.php">Home</a>
-      <a href="#">Study Material</a>
-      <a href="#">Past Year</a>
-      <a href="#">Extra Notes</a>
-      <a href="#">Online Session</a>
+      <a href="listSM.php">Study Materials</a>
+      <a href="listPU.php">Past Year</a>
+      <a href="listAdditionalNotes.php">Additional Notes</a>
+      <a href="listOnlineSession.php">Online Session</a>
     </nav>
     <div class="dropdown">
       <div class="profile">

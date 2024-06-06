@@ -14,14 +14,14 @@
   <div class="content">
     <div class="row">
       <div class="column">
-        <div id="Study Material" class="box-content">
-          <a href="#"><img src="images/studymaterial.png" alt="Book Icon"></a>
-          <h2>Study Material</h2>
+      <div id="Study Material" class="box-content">
+        <a href="studyMaterialBasic.php"><img src="../images/studymaterial.png" alt="Book Icon"></a>
+          <h2>Study Materials</h2>
         </div>
       </div>
       <div class="column">
-        <div id="Past Year" class="box-content">
-          <a href="#"><img src="images/pastyear.png" alt="Question Icon"></a>
+      <div id="Past Year" class="box-content">
+        <a href="listPU.php"><img src="../images/studymaterial.png" alt="Book Icon"></a>
           <h2>Past Year</h2>
         </div>
       </div>
