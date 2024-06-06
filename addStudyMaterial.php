@@ -38,7 +38,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "study material added correctly";
 
-        header("location: /SLMS2/listStudyMaterial.php");
+        header("location: listStudyMaterial.php");
         exit;
 
     } while (false);

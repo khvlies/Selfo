@@ -47,7 +47,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "tutor added correctly";
 
-        header("location: /SLMS2/listTutor.php");
+        header("location: listTutor.php");
         exit;
 
     } while (false);
@@ -131,7 +131,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/SLMS2/listTutor.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="listTutor.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

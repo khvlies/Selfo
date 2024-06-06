@@ -38,7 +38,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "past year added correctly";
 
-        header("location: /SLMS2/listPastYear.php");
+        header("location: listPastYear.php");
         exit;
 
     } while (false);
