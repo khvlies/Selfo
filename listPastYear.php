@@ -67,7 +67,6 @@
                     <td>
                         <a class='btn btn-primary btn-sm' href='updatePastYear.php?paper_id={$row['paper_id']}'>Update</a>
                         <a class='btn btn-danger btn-sm' href='deletePastYear.php?paper_id={$row['paper_id']}'>Delete</a>
-                        <a class='btn btn-success btn-sm' href='downloadStudyMaterial.php?file_id={$row['paper_id']}'>Download</a>
                     </td>
                 </tr>";
                 }

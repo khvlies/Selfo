@@ -23,9 +23,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>STUDY MATERIAL ID</th>
+                    <th>ID</th>
                     <th>COURSE CODE</th>
-                    <th>CONTENT</th>
+                    <th>FILE NAME</th>
+                    <th>UPLOAD DATE</th>
+                    <th>OPTIONS</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,11 +56,14 @@
                 //read data of each row
                 while($row = $result->fetch_assoc()){
                     echo "<tr>
-                    <td>$row[study_id]</td>
-                    <td>$row[course_code]</th>
-                    <td>$row[pdf_link]</th>
-                </tr>
-                ";
+                    <td>{$row['study_id']}</td>
+                    <td>{$row['course_code']}</td>
+                    <td>{$row['file_name']}</td>
+                    <td>{$row['upload_date']}</td>
+                    <td>
+                        <a class='btn btn-primary btn-sm' href='downloadStudyMaterial.php?file_id={$row['study_id']}'>Download</a>
+                    </td>
+                </tr>";
                 }
                 ?>
             </tbody>
