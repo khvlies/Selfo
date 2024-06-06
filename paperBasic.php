@@ -94,7 +94,8 @@ $connection = new mysqli($servername, $username, $password, $database);
   <ul>
     <li class="logo"><img src="selfo.png" alt="Company Logo"></li>
     <li><a href="basicHome.php" class="home-link">Home</a></li>
-	<li><a href="studyMaterialBasic.php" class="material-link">Study Material</a></li>
+	  <li><a href="studyMaterialBasic.php" class="material-link">Study Material</a></li>
+    <li><a class="active" href="paperBasic.php">Past Year</a></li>
   </ul>
 
   <div style="padding: 80px 20px;">
@@ -106,7 +107,6 @@ $connection = new mysqli($servername, $username, $password, $database);
               <th>PAPER ID</th>
               <th>COURSE CODE</th>
               <th>PAST YEAR PAPER</th>
-              <th>ANSWER PAPER</th>
               <th>ADMIN ID</th>
               <th>OPTIONS</th>
             </tr>
@@ -116,7 +116,7 @@ $connection = new mysqli($servername, $username, $password, $database);
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $database = "selfo(1)";
+            $database = "selfodb";
 
             // Create connection
             $connection = new mysqli($servername, $username, $password, $database);
@@ -140,7 +140,6 @@ $connection = new mysqli($servername, $username, $password, $database);
                 <td>" . htmlspecialchars($row['paper_id'], ENT_QUOTES, 'UTF-8') . "</td>
                 <td>" . htmlspecialchars($row['course_code'], ENT_QUOTES, 'UTF-8') . "</td>
                 <td><a href='" . htmlspecialchars($row['content_LinkHref'], ENT_QUOTES, 'UTF-8') . "' target='_blank'>Download</a></td>
-                <td><a href='" . htmlspecialchars($row['answer_LinkHref'], ENT_QUOTES, 'UTF-8') . "' target='_blank'>Download</a></td>
                 <td>" . htmlspecialchars($row['admin_id'], ENT_QUOTES, 'UTF-8') . "</td>
                 <td>
                     <a class='btn btn-primary btn-sm' href='updatePastYear.php?paper_id=" . htmlspecialchars($row['paper_id'], ENT_QUOTES, 'UTF-8') . "'>Update</a>

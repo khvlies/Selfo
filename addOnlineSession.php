@@ -7,28 +7,27 @@ $database = "selfodb";
 // Create connection
 $connection = new mysqli($servername, $username, $password, $database);
 
-$online_id = "";
 $course_code = "";
-$pdf_link = "";
+$link_meet = "";
 $tutor_id = "";
 
 $errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $online_id = $_POST["online_id"];
+    
     $course_code = $_POST["course_code"];
-    $pdf_link = $_POST["pdf_link"];
+    $link_meet = $_POST["link_meet"];
     $tutor_id = $_POST["tutor_id"];
 
     do {
-        if (empty($online_id) || empty($course_code) || empty($pdf_link) || empty($tutor_id)) {
+        if ( empty($course_code) || empty($link_meet) || empty($tutor_id)) {
             $errorMessage = "All the fields are required";
             break;
         }
 
         // Add new user to database
-        $sql = "INSERT INTO online_session (online_id, course_code, pdf_link, tutor_id) VALUES ('$online_id', '$course_code', '$pdf_link', '$tutor_id')";
+        $sql = "INSERT INTO online_session ( course_code, link_meet, tutor_id) VALUES ( '$course_code', '$link_meet', '$tutor_id')";
         $result = $connection->query($sql);
 
         if (!$result) {
@@ -36,9 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             break;
         }
 
-        $online_id = "";
         $course_code = "";
-        $pdf_link = "";
+        $link_meet = "";
         $tutor_id = "";
 
         $successMessage = "Online Session added correctly";
@@ -77,12 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
         <form method="post">
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">ID</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="online_id" value="<?php echo $online_id; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Course Code</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="course_code" value="<?php echo $course_code; ?>">
@@ -91,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Content</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="pdf_link" value="<?php echo $pdf_link; ?>">
+                    <input type="text" class="form-control" name="link_meet" value="<?php echo $link_meet; ?>">
                 </div>
             </div>
             <div class="row mb-3">
