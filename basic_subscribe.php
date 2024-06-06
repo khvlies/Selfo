@@ -116,9 +116,6 @@
     <form id="subscription-form" action="basic_process.php" method="post">
       <div style="font-size:1.5em; color:#696666; text-align:center;">Sign Up Basic User</div>
       <hr>
-      <label for="uid"><b>User ID</b></label>
-      <input type="text" placeholder="Enter User ID" name="basicid" id="uid" value="" required>
-
       <label for="pass"><b>Password</b></label>
       <input type="text" placeholder="Enter Password" name="basicpass" id="pass" value="" required>
 

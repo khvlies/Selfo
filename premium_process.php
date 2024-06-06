@@ -1,23 +1,16 @@
 <?php
 include("dbconn_selfo.php");
 
-$p_id = mysqli_real_escape_string($dbconn, $_REQUEST['premiumid']);
 $p_pass = mysqli_real_escape_string($dbconn, $_REQUEST['premiumpass']);
 $p_name = mysqli_real_escape_string($dbconn, $_REQUEST['premiumname']);
 $p_phone = mysqli_real_escape_string($dbconn, $_REQUEST['premiumphone']);
 $p_email = mysqli_real_escape_string($dbconn, $_REQUEST['premiumemail']);
 
-$sqlInsertPremium = "INSERT INTO premium_user (premium_id, premium_password, premium_name, premium_phone, premium_email) VALUES (?, ?, ?, ?, ?)";
+$sqlInsertPremium = "INSERT INTO premium_user (premium_password, premium_name, premium_phone, premium_email) VALUES (?, ?, ?, ?, ?)";
 $stmtPremium = $dbconn->prepare($sqlInsertPremium);
-$stmtPremium->bind_param("sssss", $p_id, $p_pass, $p_name, $p_phone, $p_email);
+$stmtPremium->bind_param("sssss",$p_pass, $p_name, $p_phone, $p_email);
 
 if ($stmtPremium->execute()) {
-    $sqlInsertLogin = "INSERT INTO login (PASSWORD,ROLE) VALUES ( ?, ?)";
-    $stmtLogin = $dbconn->prepare($sqlInsertLogin);
-    $role = 'premium';
-    $stmtLogin->bind_param("ss", $p_pass, $role);
-    
-    if ($stmtLogin->execute()) {
         echo'<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -63,7 +56,7 @@ if ($stmtPremium->execute()) {
     }
     
     $stmtLogin->close();
-} else {
+ else {
     echo "Error: " . $stmtPremium->error;
 }
 
