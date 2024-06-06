@@ -15,19 +15,19 @@
     <div class="row">
       <div class="column">
         <div id="Additional Notes" class="box-content">
-        <a href="listAdditionalNotes.php"><img src="../images/studymaterial.png" alt="Book Icon"></a>
+        <a href="listAdditionalNotes.php"><img src="images/studymaterial.png" alt="Book Icon"></a>
           <h2>Additional Notes</h2>
         </div>
       </div>
       <div class="column">
         <div id="Online Session" class="box-content">
-        <a href="listOnlineSession.php"><img src="../images/onlineSessione.png" alt="Online Class Icon"></a>
+        <a href="listOnlineSession.php"><img src="images/onlineSession.jpg" alt="Online Class Icon"></a>
           <h2>Online Session</h2>
         </div>
       </div>
       <div class="column">
         <div id="Premium User" class="box-content">
-        <a href="listPU.php"><img src="../images/profile.png" alt="Profile Icon"></a>
+        <a href="listPU.php"><img src="images/profile.png" alt="Profile Icon"></a>
           <h2>Premium User</h2>
         </div>
       </div>

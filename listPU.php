@@ -8,15 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <img src="images/selfo.jpg" alt="Company Logo" style="width: 70px; height: auto;">
-        <nav>
-			<a href=" /SLMS2/tutor_page.php">Home</a>
-			<a href=" /SLMS2/listAdditionalNotes.php">Additional Notes</a>
-			<a href=" /SLMS2/listOnlineSession.php">Online Session</a>
-			<a href=" /SLMS2/listPU.php">Premium User</a>
-        </nav>
-    </header>
+    <?php include('nav-T.php'); ?>
     <main>
     <div class="container my-5">
         <h2>List of Premium User</h2>
