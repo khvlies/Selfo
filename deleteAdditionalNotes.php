@@ -31,7 +31,7 @@ try {
         // Check if any row was deleted
         if ($stmt->affected_rows > 0) {
             // Record deleted successfully, redirect to listAdditionalNotes.php
-            header("Location: /SLMS2/listAdditionalNotes.php");
+            header("Location: listAdditionalNotes.php");
             exit;
         } else {
             $errorMessage = "No record found with the specified ID.";
@@ -91,7 +91,7 @@ try {
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-secondary" href="/SLMS2/listAdditionalNotes.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-secondary" href="listAdditionalNotes.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

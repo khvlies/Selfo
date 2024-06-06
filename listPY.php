@@ -11,9 +11,9 @@
     <header>
         <img src="images/selfo.jpg" alt="Company Logo" style="width: 70px; height: auto;">
         <nav>
-			<a href=" /SLMS2/basicMainPage.php">Home</a>
-			<a href=" /SLMS2/listSM.php">Study Material</a>
-			<a href=" /SLMS2/listPY.php">Past Year</a>
+			<a href=" basicMainPage.php">Home</a>
+			<a href=" listSM.php">Study Material</a>
+			<a href=" listPY.php">Past Year</a>
         </nav>
     </header>
     <main>

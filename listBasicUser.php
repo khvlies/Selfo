@@ -11,12 +11,12 @@
     <header>
         <img src="images/selfo.jpg" alt="Company Logo" style="width: 70px; height: auto;">
         <nav>
-            <a href=" /SLMS2/adminPage.php">Home</a>
-            <a href=" /SLMS2/listPremiumUser.php">Premium User</a>
-            <a href=" /SLMS2/listBasicUser.php">Basic User</a>
-            <a href=" /SLMS2/listStudyMaterial.php">Study Material</a>
-            <a href=" /SLMS2/listPastYear.php">Past Year</a>
-            <a href=" /SLMS2/listTutor.php">Tutor</a>
+            <a href=" adminPage.php">Home</a>
+            <a href=" listPremiumUser.php">Premium User</a>
+            <a href=" listBasicUser.php">Basic User</a>
+            <a href=" listStudyMaterial.php">Study Material</a>
+            <a href=" listPastYear.php">Past Year</a>
+            <a href=" listTutor.php">Tutor</a>
         </nav>
     </header>
     <main>
@@ -64,7 +64,7 @@
                     <td>$row[basic_phone]</td>
                     <td>$row[basic_email]</td>
                     <td>
-                        <a class='btn btn-danger btn-sm' href='/SLMS2/deleteBasicUser.php?basic_id=$row[basic_id]'>Delete</a>
+                        <a class='btn btn-danger btn-sm' href='deleteBasicUser.php?basic_id=$row[basic_id]'>Delete</a>
                     </td>
                 </tr>
                 ";
