@@ -4,31 +4,30 @@ $username = "root";
 $password = "";
 $database = "selfodb";
 
-// Create connection
+//create connection
 $connection = new mysqli($servername, $username, $password, $database);
 
-$online_id = "";
-$course_code = "";
-$pdf_link = "";
-$tutor_id = "";
+$online_id ="";
+$course_code ="";
+$link_meet ="";
 
 $errorMessage = "";
 $successMessage = "";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $online_id = $_POST["online_id"];
-    $course_code = $_POST["course_code"];
-    $pdf_link = $_POST["pdf_link"];
-    $tutor_id = $_POST["tutor_id"];
+if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
+    $online_id =$_POST["online_id"];
+    $course_code =$_POST["course_code"];
+    $link_meet =$_POST["link_meet"];
+    $admin_id =$_POST["admin_id"];
 
     do {
-        if (empty($online_id) || empty($course_code) || empty($pdf_link) || empty($tutor_id)) {
+        if ( empty($online_id) || empty($course_code)  || empty($link_meet)) {
             $errorMessage = "All the fields are required";
             break;
         }
 
-        // Add new user to database
-        $sql = "INSERT INTO online_session (online_id, course_code, pdf_link, tutor_id) VALUES ('$online_id', '$course_code', '$pdf_link', '$tutor_id')";
+        // Add new material to database
+        $sql = "INSERT INTO online_session (online_id, course_code , link_meet ) VALUES ('$paper_id', '$course_code' , '$link_meet')";
         $result = $connection->query($sql);
 
         if (!$result) {
@@ -36,32 +35,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             break;
         }
 
-        $online_id = "";
-        $course_code = "";
-        $pdf_link = "";
-        $tutor_id = "";
+        $online_id ="";
+        $course_code ="";
+        $link_meet ="";
 
-        $successMessage = "Online Session added correctly";
+        $successMessage = "Online session added correctly";
 
-        header("location: /SLMS2/listOnlineSession.php");
+        header("location: listOnlineSession.php");
         exit;
 
     } while (false);
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/icon.png"/>
-    <title>Online Session</title>
-    <link rel="stylesheet" href="css/style2.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+<html>
 <body>
-    <main>
+
+<main>
     <div class="container my-5">
         <h2>New Online Session</h2>
 
@@ -89,18 +79,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Content</label>
+                <label class="col-sm-3 col-form-label">Link Session</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="pdf_link" value="<?php echo $pdf_link; ?>">
+                    <input type="text" class="form-control" name="link_meet" value="<?php echo $link_meet; ?>">
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Tutor ID</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="tutor_id" value="<?php echo $tutor_id; ?>">
-                </div>
-            </div>
-
+           
             <?php
             if (!empty($successMessage)) {
                 echo "
@@ -121,11 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/SLMS2/listOnlineSession.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="listOnlineSession.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>
-    </div>
+    </div> 
     </main>
 </body>
 </html>

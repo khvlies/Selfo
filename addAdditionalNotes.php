@@ -22,7 +22,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         // Add new material to database
-        $sql = "INSERT INTO additional_notes (addN_id) VALUES ('$study_id')";
+        $sql = "INSERT INTO additional_notes (addN_id) VALUES ('$addN_id')";
         $result = $connection->query($sql);
 
         if (!$result) {
@@ -30,7 +30,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
             break;
         }
 
-        $study_id ="";
+        $addN_id ="";
 
 
         $successMessage = "additional notes added correctly";
