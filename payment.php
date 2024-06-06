@@ -73,6 +73,3 @@
         <button type="submit" class="btn">Submit Payment</button>
     </form>
 </div>
-
-</body>
-</html>

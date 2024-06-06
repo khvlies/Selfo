@@ -18,8 +18,8 @@ $basic_name = isset($_SESSION['basic_name']) ? $_SESSION['basic_name'] : 'Basic 
     <div class="logo"><img src="images/selfo.jpg" alt="Company Logo"></div>
     <nav>
       <a class="active" href="basicMainpage.php">Home</a>
-      <a href="studyMaterialBasic.php">Study Material</a>
-      <a href="listPU.php">Past Year</a>
+      <a href="listSM.php">Study Material</a>
+      <a href="listPY.php">Past Year</a>
     </nav>
     <div class="dropdown">
       <div class="profile">

@@ -67,7 +67,6 @@
                     <td>
                         <a class='btn btn-primary btn-sm' href='updateStudyMaterial.php?study_id={$row['study_id']}'>Update</a>
                         <a class='btn btn-danger btn-sm' href='deleteStudyMaterial.php?study_id={$row['study_id']}'>Delete</a>
-                        <a class='btn btn-success btn-sm' href='downloadStudyMaterial.php?file_id={$row['study_id']}'>Download</a>
                     </td>
                 </tr>";
                 }
