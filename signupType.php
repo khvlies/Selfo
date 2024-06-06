@@ -47,6 +47,7 @@
       border-radius: 25px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
+      height: 280px;
     }
     @media screen and (max-width: 600px) {
       .column {
@@ -60,7 +61,8 @@
       margin-left: 10px;
     }
     .checkout{
-        margin-top:20px; 
+        display: fixed;
+        margin-top: 40px; 
         padding:10px 20px; 
         font-size:16px; 
         background-color:#097F94; 
@@ -75,7 +77,7 @@
 <body>
   <div class="header">
     <div class="logo">
-      <img src="images/selfo.jpg" alt="Company Logo">
+      <a href="loginpage.php"><img src="images/selfo.jpg" alt="Company Logo"></a>
     </div>
   </div>
   <div style="font-size:2.5em; color:white; text-align:center; margin-top:50px;">Choose Your Plan</div>
@@ -90,7 +92,8 @@
           <li><i class="fa fa-check" style="font-size:20px"></i> 500+ Study Material</li>
           <li><i class="fa fa-check" style="font-size:20px"></i> Past year question including suggested answer</li>
         </ul>
-        <input class="checkout" type="button" value="Subscribe" onclick="window.location.href='basic_subscribe.php';" aria-label="Subscribe">      </div>
+        <input style="margin-top: 22px;" class="checkout" type="button" value="Subscribe" onclick="window.location.href='basic_subscribe.php';" aria-label="Subscribe">      
+      </div>
     </div>
     <div class="column">
       <div class="box-content">
