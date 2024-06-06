@@ -27,7 +27,7 @@
       </div>
 	  <div class="column">
         <div id="Extra Notes" class="box-content" >
-        <a href="extraNotes.php"><img src="extranotes.png" alt="Book Icon"></a>
+        <a href="extraNotes.php"><img src="images/additionalNotes.jpg" alt="Book Icon"></a>
           <h2>Additional Notes</h2>
         </div>
       </div>
