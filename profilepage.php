@@ -26,8 +26,6 @@ echo '</pre>';*/
   <div class="main-content">
     <div class="picture">
       <img src="images/profile.png" id="profile-pic">
-      <label for="input-file">Update Image</label>
-      <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-file">
     </div>
     <div class="profile-info">
       <form action="/update_profile" method="post">

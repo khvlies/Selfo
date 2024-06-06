@@ -47,19 +47,6 @@ body {
       border-radius: 50%;
       margin-bottom: 7px;
     }
-    .picture label {
-      background-color: #097F94;
-      color: white;
-      padding: 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      text-align: center;
-      font-size: small;
-      margin-top: 1px;
-    }
-    .picture input {
-      display: none;
-    }
     .profile-info {
       display: flex;
       flex-direction: column;
