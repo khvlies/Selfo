@@ -8,6 +8,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
 }
 .content-left {
   max-width: 50%;
@@ -65,11 +66,74 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 
 footer {
-  background-color: #f8f9fa; /* Adjust to match your page's design */
+  background-color: #f8f9fa;
   text-align: center;
   padding: 10px 0;
   position: absolute;
+  bottom: 0;
   width: 100%;
-  margin-top: 100%;
-  display: fixed;
+}
+
+@media (max-width: 1200px) {
+  .content-left {
+    max-width: 60%;
+    padding: 35px;
+  }
+  .welcome-message {
+    font-size: 2.5em;
+  }
+  .intro {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 992px) {
+  .content-left {
+    max-width: 70%;
+    padding: 25px;
+  }
+  .welcome-message {
+    font-size: 2em;
+  }
+  .intro {
+    font-size: 1em;
+  }
+  .container {
+    margin-right: 5%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content-left, .container {
+    max-width: 90%;
+    padding: 15px;
+    margin: 0;
+  }
+  .container {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+  .welcome-message {
+    font-size: 1.8em;
+  }
+  .intro {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 576px) {
+  .welcome-message {
+    font-size: 1.5em;
+  }
+  .intro {
+    font-size: 0.8em;
+  }
+  .container {
+    padding: 20px;
+  }
 }
