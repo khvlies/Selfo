@@ -15,25 +15,25 @@
     <div class="row">
       <div class="column">
         <div id="Study Material" class="box-content">
-        <a href="studyMaterialPremium.php"><img src="images/studymaterial.png" alt="Book Icon"></a>
+        <a href="listSMP.php"><img src="images/studymaterial.png" alt="Book Icon"></a>
           <h2>Study Material</h2>
         </div>
       </div>
       <div class="column">
         <div id="Past Year" class="box-content" >
-        <a href="paperBasic.php"><img src="images/pastyear.png" alt="Question Icon"></a>
+        <a href="listPYP.php"><img src="images/pastyear.png" alt="Question Icon"></a>
           <h2>Past Year</h2>
         </div>
       </div>
 	  <div class="column">
         <div id="Extra Notes" class="box-content" >
-        <a href="extraNotes.php"><img src="images/additionalNotes.jpg" alt="Book Icon"></a>
+        <a href="listAddNotes.php"><img src="images/additionalNotes.jpg" alt="Book Icon"></a>
           <h2>Additional Notes</h2>
         </div>
       </div>
 	  <div class="column">
         <div id="Online Session" class="box-content" >
-        <a href="onlineClass.php"><img src="images/onlineSession.jpg" alt="Online Icon"></a>
+        <a href="onlineSession.php"><img src="images/onlineSession.jpg" alt="Online Icon"></a>
           <h2>Online Session</h2>
         </div>
       </div>

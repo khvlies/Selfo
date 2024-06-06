@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<?php include('nav-A.php'); ?>
+<?php include('nav-P.php'); ?>
     <main>
     <div class="container my-5">
         <h2>List of Study Material</h2>
-        <a class="btn btn-secondary" href="addStudyMaterial.php" role="button">Add Study Material</a>
         <br>
         <table class="table">
             <thead>
@@ -55,8 +54,7 @@
                     <td>{$row['file_name']}</td>
                     <td>{$row['upload_date']}</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='updateStudyMaterial.php?study_id={$row['study_id']}'>Update</a>
-                        <a class='btn btn-danger btn-sm' href='deleteStudyMaterial.php?study_id={$row['study_id']}'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='downloadStudyMaterial.php?file_id={$row['study_id']}'>Download</a>
                     </td>
                 </tr>";
                 }
