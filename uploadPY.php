@@ -59,7 +59,7 @@ if ($uploadOk == 0) {
             // Prepare the JavaScript to redirect after showing the message
             $redirectScript = "<script>
                 alert('The file has been uploaded successfully.');
-                window.location.href = '/SLMS2/listPastYear.php';
+                window.location.href = 'listPastYear.php';
             </script>";
         } else {
             $message = "Error: " . $sql . "<br>" . $conn->error;

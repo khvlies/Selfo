@@ -11,18 +11,18 @@
     <header>
         <img src="images/selfo.jpg" alt="Company Logo" style="width: 70px; height: auto;">
         <nav>
-            <a href="/SLMS2/adminPage.php">Home</a>
-            <a href="/SLMS2/listPremiumUser.php">Premium User</a>
-            <a href="/SLMS2/listBasicUser.php">Basic User</a>
-            <a href="/SLMS2/listStudyMaterial.php">Study Material</a>
-            <a href="/SLMS2/listPastYear.php">Past Year</a>
-            <a href="/SLMS2/listTutor.php">Tutor</a>
+            <a href="adminPage.php">Home</a>
+            <a href="listPremiumUser.php">Premium User</a>
+            <a href="listBasicUser.php">Basic User</a>
+            <a href="listStudyMaterial.php">Study Material</a>
+            <a href="listPastYear.php">Past Year</a>
+            <a href="listTutor.php">Tutor</a>
         </nav>
     </header>
     <main>
     <div class="container my-5">
         <h2>List of Study Material</h2>
-        <a class="btn btn-secondary" href="/SLMS2/addStudyMaterial.php" role="button">Add Study Material</a>
+        <a class="btn btn-secondary" href="addStudyMaterial.php" role="button">Add Study Material</a>
         <br>
         <table class="table">
             <thead>
@@ -65,9 +65,9 @@
                     <td>{$row['file_name']}</td>
                     <td>{$row['upload_date']}</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/SLMS2/updateStudyMaterial.php?study_id={$row['study_id']}'>Update</a>
-                        <a class='btn btn-danger btn-sm' href='/SLMS2/deleteStudyMaterial.php?study_id={$row['study_id']}'>Delete</a>
-                        <a class='btn btn-success btn-sm' href='/SLMS2/downloadStudyMaterial.php?file_id={$row['study_id']}'>Download</a>
+                        <a class='btn btn-primary btn-sm' href='updateStudyMaterial.php?study_id={$row['study_id']}'>Update</a>
+                        <a class='btn btn-danger btn-sm' href='deleteStudyMaterial.php?study_id={$row['study_id']}'>Delete</a>
+                        <a class='btn btn-success btn-sm' href='downloadStudyMaterial.php?file_id={$row['study_id']}'>Download</a>
                     </td>
                 </tr>";
                 }

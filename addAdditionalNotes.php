@@ -35,7 +35,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "additional notes added correctly";
 
-        header("location: /SLMS2/listAdditionalNotes.php");
+        header("location: listAdditionalNotes.php");
         exit;
 
     } while (false);

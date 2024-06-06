@@ -22,7 +22,7 @@ $successMessage = "";
 try {
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if (!isset($_GET["tutor_id"])) {
-            header("location: /SLMS2/listTutor.php");
+            header("location: listTutor.php");
             exit;
         }
 
@@ -36,7 +36,7 @@ try {
         $row = $result->fetch_assoc();
 
         if (!$row) {
-            header("location: /SLMS2/listTutor.php");
+            header("location: listTutor.php");
             exit;
         }
 
@@ -65,7 +65,7 @@ try {
         if ($stmt->affected_rows > 0) {
             $successMessage = "Record updated successfully.";
             // Redirect to listTutor.php after successful update
-            header("Location: /SLMS2/listTutor.php");
+            header("Location: listTutor.php");
             exit();
         } else {
             $errorMessage = "No record found with the specified ID.";
@@ -153,7 +153,7 @@ try {
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/SLMS2/listTutor.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="listTutor.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

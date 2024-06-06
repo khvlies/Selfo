@@ -12,7 +12,7 @@
     <main>
     <div class="container my-5">
         <h2>List of Tutor</h2>
-        <a class="btn btn-secondary" href="/SLMS2/addTutor.php" role="button">New Tutor</a>
+        <a class="btn btn-secondary" href="addTutor.php" role="button">New Tutor</a>
         <br>
         <table class="table">
             <thead>
@@ -57,8 +57,8 @@
                     <td>$row[tutor_phone]</td>
                     <td>$row[tutor_email]</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/SLMS2/updateTutor.php?tutor_id=$row[tutor_id]'>Update</a>
-                        <a class='btn btn-danger btn-sm' href='/SLMS2/deleteTutor.php?tutor_id=$row[tutor_id]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='updateTutor.php?tutor_id=$row[tutor_id]'>Update</a>
+                        <a class='btn btn-danger btn-sm' href='deleteTutor.php?tutor_id=$row[tutor_id]'>Delete</a>
                     </td>
                 </tr>
                 ";
