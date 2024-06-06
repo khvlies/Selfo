@@ -18,7 +18,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
     $online_id =$_POST["online_id"];
     $course_code =$_POST["course_code"];
     $link_meet =$_POST["link_meet"];
-    $admin_id =$_POST["admin_id"];
 
     do {
         if ( empty($online_id) || empty($course_code)  || empty($link_meet)) {
@@ -27,7 +26,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         // Add new material to database
-        $sql = "INSERT INTO online_session (online_id, course_code , link_meet ) VALUES ('$paper_id', '$course_code' , '$link_meet')";
+        $sql = "INSERT INTO online_session (online_id, course_code , link_meet ) VALUES ('$online_id', '$course_code' , '$link_meet')";
         $result = $connection->query($sql);
 
         if (!$result) {
@@ -49,6 +48,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 ?>
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
 <body>
 
 <main>
@@ -66,7 +68,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
         }
         ?>
         <form method="post">
-            <div class="row mb-3">
+        <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">ID</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="online_id" value="<?php echo $online_id; ?>">

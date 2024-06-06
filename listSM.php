@@ -8,14 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-   <header>
-        <img src="images/selfo.jpg" alt="Company Logo" style="width: 70px; height: auto;">
-        <nav>
-			<a href=" basicMainPage.php">Home</a>
-			<a href=" listSM.php">Study Material</a>
-			<a href=" listPY.php">Past Year</a>
-        </nav>
-    </header>
+<?php include('nav-B.php'); ?>
     <main>
     <div class="container my-5">
         <h2>List of Study Material</h2>

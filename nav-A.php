@@ -17,7 +17,7 @@ $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin'
   <header>
     <div class="logo"><img src="images/selfo.jpg" alt="Company Logo"></div>
     <nav>
-      <a class="active" href="loginpage.php">Home</a>
+      <a class="active" href="adminPage.php">Home</a>
       <a href="listStudyMaterial.php">Study Material</a>
       <a href="listPastYear.php">Past Year</a>
       <a href="listBasicUser.php">Basic User</a>

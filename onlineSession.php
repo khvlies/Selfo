@@ -12,6 +12,7 @@
   <?php include('nav-P.php'); ?>
   <main>
     <div class="container my-5">
+    <h2>List of Online Session</h2>
         <br>
         <table class="table table-bordered">
             <thead>

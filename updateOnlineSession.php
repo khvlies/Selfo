@@ -40,6 +40,7 @@ try {
 
         $course_code = $row["course_code"];
         $link_meet = $row["link_meet"];
+        
     } elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve and sanitize user input
         $online_id = $_POST['online_id'];
