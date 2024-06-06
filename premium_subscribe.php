@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/icon.png"/>
   <title>Subscribe</title>
   <style>
     body {
@@ -115,14 +116,14 @@
     <form id="subscription-form" action="payment.php" method="post">
       <div style="font-size:1.5em; color:#696666; text-align:center;">Subscribe to Premium Plan</div>
       <hr>
-      <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter Name" name="premiumname" id="name" value="" required>
-
       <label for="uid"><b>User ID</b></label>
       <input type="text" placeholder="Enter User ID" name="premiumid" id="uid" value="" required>
 
       <label for="pass"><b>Password</b></label>
       <input type="text" placeholder="Enter Password" name="premiumpass" id="pass" value="" required>
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="premiumname" id="name" value="" required>
 
       <label for="phoneno"><b>Phone Number</b></label>
       <input type="tel" placeholder="Enter Phone Number" name="premiumphone" id="phoneno"  value="" required>

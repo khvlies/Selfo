@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subscribe</title>
+  <link rel="icon" href="images/icon.png"/>
+  <title>Sign Up Basic User</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -38,7 +39,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       max-width: 400px;
       width: 100%;
-      margin-top: 200px;
+      margin-top: 250px;
       text-align: left;
     }
     input[type=text], input[type=email], input[type=tel] {
@@ -92,18 +93,18 @@
       margin-top: 15px;
       text-align: center;
     }
-    .free-notice {
-      color: green;
-      font-size: 1em;
-      margin-top: 15px;
-      text-align: center;
-    }
     @media screen and (max-width: 300px) {
       .backbtn, .confirmbtn {
         width: 100%;
       }
     }
+
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.free-notice').style.display = 'block';
+    });
+  </script>
 </head>
 <body>
   <div class="header">
@@ -113,16 +114,16 @@
   </div>
   <div class="container">
     <form id="subscription-form" action="basic_process.php" method="post">
-      <div style="font-size:1.5em; color:#696666; text-align:center;">Subscribe to Free Plan</div>
+      <div style="font-size:1.5em; color:#696666; text-align:center;">Sign Up Basic User</div>
       <hr>
-      <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter Name" name="basicname" id="name" value="" required>
-
       <label for="uid"><b>User ID</b></label>
       <input type="text" placeholder="Enter User ID" name="basicid" id="uid" value="" required>
 
       <label for="pass"><b>Password</b></label>
       <input type="text" placeholder="Enter Password" name="basicpass" id="pass" value="" required>
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="basicname" id="name" value="" required>
 
       <label for="phoneno"><b>Phone Number</b></label>
       <input type="tel" placeholder="Enter Phone Number" name="basicphone" id="phoneno"  value="" required>
@@ -130,9 +131,6 @@
       <label for="email"><b>Email</b></label>
       <input type="email" placeholder="Enter Email" name="basicemail" id="email" value="" required>
 
-      <div class="free-notice">
-        You are subscribing to the Free plan with no charges.
-      </div>
       <div class="clearfix">
         <button type="submit" class="confirmbtn" name="add basic" value="New Basic Account">Confirm</button>
         <button type="button" class="backbtn" onclick="window.location.href='signupType.php';">Cancel</button>
