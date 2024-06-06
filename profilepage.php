@@ -49,7 +49,7 @@ echo '</pre>';*/
         <div class="clearfix updateprofile-button">
           <button type="submit" class="edit-button">Update</button>
           <span style="margin: 0 10px;"></span>
-          <button type="button" class="cancel-button" onclick="window.location.reload();">Cancel</button>
+          <button type="button" class="cancel-button" onclick="window.location.href='<?php echo htmlspecialchars($mainPageURL); ?>';">Cancel</button>
         </div>
       </form>
     </div>
