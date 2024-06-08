@@ -1,113 +1,152 @@
 body {
-      font-family: Arial, sans-serif;
-      background-color: #097F94;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .header {
-      background-color: #fff;
-      padding: 5px 0;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 80px;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .logo img {
-      width: 70px;
-      height: auto;
-    }
-    .main-content {
-      padding: 20px;
-      width: 700px;
-      max-width: 90%;
-      background-color: #fff;
-      border-radius: 25px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-top: 350px;
-    }
-    .picture {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .picture img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-bottom: 7px;
-    }
-    .profile-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .profile-info p {
-      margin: 5px 0;
-    }
-    input[type=text], input[type=password], input[type=email], input[type=tel] {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 15px;
-      box-sizing: border-box;
-    }
-    input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=tel]:focus {
-      border-color: #097F94;
-      outline: none;
-    }
-    button {
-      background-color: #097F94;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      width: 100%;
-    }
-    button:hover {
-      background-color: #065e6d;
-    }
-    .edit-button {
-      font-size: medium;
-      color: #4CAF50;
-      background-color: #ffffff;
-      border: 1px solid #4CAF50;
-      cursor: pointer;
-    }
-    .edit-button:hover {
-      background-color: #45a049;
-      color: #ffffff;
-    }
-    .cancel-button {
-      font-size: medium;
-      color: rgb(197, 0, 0);
-      background-color: #ffffff;
-      border: 1px solid rgb(197, 0, 0);
-      cursor: pointer;
-    }
-    .cancel-button:hover {
-      background-color: rgb(197, 0, 0);
-      color: #ffffff;
-    }
-    .updateprofile-button {
-      display: flex;
-      justify-content: space-between;
-    }
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
+  font-family: Arial, sans-serif;
+  background-color: #097F94;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.header {
+  background-color: #fff;
+  padding: 5px 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 70px;
+  height: auto;
+}
+
+.main-content {
+  padding: 20px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 100px; /* Add margin to account for the fixed header */
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 7px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-info p {
+  margin: 5px 0;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=tel] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=tel]:focus {
+  border-color: #097F94;
+  outline: none;
+}
+
+button {
+  background-color: #097F94;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 70%;
+}
+
+button:hover {
+  background-color: #065e6d;
+}
+
+.edit-button {
+  font-size: medium;
+  color: #4CAF50;
+  background-color: #ffffff;
+  border: 1px solid #4CAF50;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+  color: #ffffff;
+}
+
+.cancel-button {
+  font-size: medium;
+  color: rgb(197, 0, 0);
+  background-color: #ffffff;
+  border: 1px solid rgb(197, 0, 0);
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: rgb(197, 0, 0);
+  color: #ffffff;
+}
+
+.updateprofile-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .main-content {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .picture img {
+    width: 120px;
+    height: 120px;
+  }
+
+  input[type=text], input[type=password], input[type=email], input[type=tel] {
+    padding: 8px;
+    margin: 6px 0;
+  }
+
+  button {
+    padding: 12px 15px;
+    margin: 6px 0;
+  }
+}
