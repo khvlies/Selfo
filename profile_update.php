@@ -2,6 +2,34 @@
 include("dbconn_selfo.php"); // Include your database connection
 session_start();
 
+// Define USER_ROLES constant
+define('USER_ROLES', [
+    'admin' => [
+        'table' => 'admin',
+        'name_field' => 'admin_name',
+        'phone_field' => 'admin_phone',
+        'email_field' => 'admin_email'
+    ],
+    'tutor' => [
+        'table' => 'tutor',
+        'name_field' => 'tutor_name',
+        'phone_field' => 'tutor_phone',
+        'email_field' => 'tutor_email'
+    ],
+    'premium' => [
+        'table' => 'premium_user',
+        'name_field' => 'premium_name',
+        'phone_field' => 'premium_phone',
+        'email_field' => 'premium_email'
+    ],
+    'basic' => [
+        'table' => 'basic_user',
+        'name_field' => 'basic_name',
+        'phone_field' => 'basic_phone',
+        'email_field' => 'basic_email'
+    ]
+]);
+
 // Ensure the user is logged in
 if (!isset($_SESSION['admin']) && !isset($_SESSION['tutor']) && !isset($_SESSION['premium']) && !isset($_SESSION['basic'])) {
     header("Location: loginpage.php");
@@ -56,7 +84,14 @@ $stmt->bind_param('ssss', $name, $phoneno, $email, $current_name);
 
 // Execute the query
 if ($stmt->execute()) {
-    echo "Profile updated successfully";
+    // Update the session with the new name
+    $_SESSION[$userrole] = $name;
+    
+    // JavaScript for success message and redirection
+    echo "<script>
+        alert('Profile updated successfully');
+        window.location.href = 'profilepage.php'; // Redirect to home page
+    </script>";
 } else {
     echo "Error updating profile: " . $stmt->error;
 }
@@ -64,10 +99,5 @@ if ($stmt->execute()) {
 $stmt->close();
 $dbconn->close();
 
-// Update the session with the new name
-$_SESSION[$userrole] = $name;
-
-// Redirect back to the profile page
-header("Location: profilepage.php");
 exit();
 ?>
