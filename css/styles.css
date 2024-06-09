@@ -1,60 +1,10 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #097F94; /* Teal background */
     color: white;
 }
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-}
-
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-}
-
-header nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    position: relative;
-    padding: 5px 0;
-    transition: color 0.3s, background-color 0.3s; /* Smooth transition */
-}
-
-header nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #097F94;
-    transition: width 0.3s;
-}
-
-header nav a:hover {
-    color: #097F94; /* Change text color on hover */
-    background-color: rgba(0, 0, 0, 0.05); /* Optional: Add background color on hover */
-}
-
-header nav a:hover::after {
-    width: 100%;
-}
-
 main {
     padding: 20px;
     text-align: center;

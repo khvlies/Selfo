@@ -1,4 +1,7 @@
 <?php
+// Fetch user data
+include("userData.php");
+
 // Enable error reporting
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -82,64 +85,58 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icon.png"/>
-    <title>Online Session</title>
-    <link rel="stylesheet" href="css/style2.css">
-    <script src ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Update Online Session</title>
+    <link rel="stylesheet" href="css/nav-S.css">
 </head>
 <body>
+    <div class="header">
+        <div class="logo">
+            <a href="<?php echo htmlspecialchars($mainPageURL); ?>"><img src="images/selfo.jpg" alt="Company Logo"></a>
+        </div>
+    </div>
     <main>
-    <div class="container my-5">
-        <h2>Update Online Session</h2>
+        <div class="container my-5">
+            <h2>Update Online Session</h2>
 
-        <?php
-        if (!empty($errorMessage)) {
-            echo "
-            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                <strong>$errorMessage</strong>
-                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-            </div>
-            ";
-        }
+            <?php if (!empty($errorMessage)): ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong><?php echo $errorMessage; ?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
 
-        if (!empty($successMessage)) {
-            echo "
-            <div class='alert alert-success alert-dismissible fade show' role='alert'>
-                <strong>$successMessage</strong>
-                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-            </div>
-            ";
-        }
-        ?>
+            <?php if (!empty($successMessage)): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong><?php echo $successMessage; ?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
 
-        <form method="post">
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">ID</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="online_id" value="<?php echo $online_id; ?>" readonly>
+            <form method="post">
+                <div class="form-group">
+                    <label for="online_id" class="col-sm-3 col-form-label">ID</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="online_id" id="online_id" value="<?php echo $online_id; ?>" readonly>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Course Code</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="course_code" value="<?php echo $course_code; ?>">
+                <div class="form-group">
+                    <label for="course_code" class="col-sm-3 col-form-label">Course Code</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="course_code" id="course_code" value="<?php echo $course_code; ?>">
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Link Meeting</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="link_meet" value="<?php echo $link_meet; ?>">
+                <div class="form-group">
+                    <label for="link_meet" class="col-sm-3 col-form-label">Link Meeting</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="link_meet" id="link_meet" value="<?php echo $link_meet; ?>">
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="offset-sm-3 col-sm-3 d-grid">
+                <div class="form-group row mb-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                <div class="col-sm-3 d-grid">
                     <a class="btn btn-outline-primary" href="listOnlineSession.php" role="button">Cancel</a>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
     </main>
 </body>
 </html>

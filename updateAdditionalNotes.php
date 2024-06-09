@@ -1,4 +1,7 @@
 <?php
+// Fetch user data
+include("userData.php");
+
 // Enable error reporting
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -32,7 +35,7 @@ try {
         $row = $result->fetch_assoc();
 
         if (!$row) {
-            header("Location: listAdditonalNotes.php");
+            header("Location: listAdditionalNotes.php");
             exit;
         }
 
@@ -74,7 +77,7 @@ try {
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("sss", $file_name, $file_path, $addN_id);
             } else {
-                $sql = "UPDATE additional_notes WHERE addN_id = ?";
+                $sql = "UPDATE additional_notes SET WHERE addN_id = ?";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("s", $addN_id);
             }
@@ -111,57 +114,53 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icon.png"/>
     <title>Update Additional Notes</title>
-    <link rel="stylesheet" href="css/style2.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/nav-S.css">
 </head>
 <body>
+    <div class="header">
+        <div class="logo">
+        <a href="<?php echo htmlspecialchars($mainPageURL); ?>"><img src="images/selfo.jpg" alt="Company Logo"></a>
+        </div>
+    </div>
     <main>
-    <div class="container my-5">
-        <h2>Update Additional Notes</h2>
+        <div class="container my-5">
+            <h2>Update Additional Notes</h2>
 
-        <?php
-        if (!empty($errorMessage)) {
-            echo "
-            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                <strong>$errorMessage</strong>
-                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-            </div>
-            ";
-        }
-
-        if (!empty($successMessage)) {
-            echo "
-            <div class='alert alert-success alert-dismissible fade show' role='alert'>
-                <strong>$successMessage</strong>
-                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-            </div>
-            ";
-        }
-        ?>
-
-        <form method="post" enctype="multipart/form-data">
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">ID</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="addN_id" value="<?php echo htmlspecialchars($addN_id); ?>" readonly>
+            <?php
+            if (!empty($errorMessage)) {
+                echo "
+                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>$errorMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Upload New File</label>
-                <div class="col-sm-6">
+                ";
+            }
+
+            if (!empty($successMessage)) {
+                echo "
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>$successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+                ";
+            }
+            ?>
+
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="addN_id">Note ID:</label>
+                    <input type="text" class="form-control" name="addN_id" id="addN_id" value="<?php echo htmlspecialchars($addN_id); ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="fileToUpload">Upload New File:</label>
                     <input type="file" class="form-control" name="fileToUpload" id="fileToUpload">
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="offset-sm-3 col-sm-3 d-grid">
+                <div class="form-buttons">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                <div class="col-sm-3 d-grid">
                     <a class="btn btn-outline-primary" href="listAdditionalNotes.php" role="button">Cancel</a>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
     </main>
 </body>
 </html>

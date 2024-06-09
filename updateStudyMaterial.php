@@ -1,4 +1,7 @@
 <?php
+//fetch user data
+include("userData.php");
+
 // Enable error reporting
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -115,10 +118,14 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icon.png"/>
     <title>Update Study Material</title>
-    <link rel="stylesheet" href="css/style2.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/nav-S.css">
 </head>
 <body>
+    <div class="header">
+        <div class="logo">
+        <a href="<?php echo htmlspecialchars($mainPageURL); ?>"><img src="images/selfo.jpg" alt="Company Logo"></a>
+        </div>
+    </div>
     <main>
     <div class="container my-5">
         <h2>Update Study Material</h2>
@@ -144,29 +151,24 @@ try {
         ?>
 
         <form method="post" enctype="multipart/form-data">
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">ID</label>
+            <div class="form-group">
+                <label for="study_id">ID:</label>
+                <input type="text" name="study_id" value="<?php echo htmlspecialchars($study_id); ?>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="course_code">Course Code:</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="study_id" value="<?php echo htmlspecialchars($study_id); ?>" readonly>
+                    <input type="text" name="course_code" value="<?php echo htmlspecialchars($course_code); ?>">
                 </div>
             </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Course Code</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="course_code" value="<?php echo htmlspecialchars($course_code); ?>">
+            <div class="form-group">
+                <label for="fileToUpload">Upload New File</label>
+                <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
             </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Upload New File</label>
-                <div class="col-sm-6">
-                    <input type="file" class="form-control" name="fileToUpload" id="fileToUpload">
-                </div>
-            </div>
-            <div class="row mb-3">
+            <div class="form-buttons">
                 <div class="offset-sm-3 col-sm-3 d-grid">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                <div class="col-sm-3 d-grid">
                     <a class="btn btn-outline-primary" href="listStudyMaterial.php" role="button">Cancel</a>
                 </div>
             </div>
