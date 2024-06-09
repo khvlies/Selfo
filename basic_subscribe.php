@@ -87,24 +87,12 @@
       clear: both;
       display: table;
     }
-    .premium-notice {
-      color: red;
-      font-size: 1em;
-      margin-top: 15px;
-      text-align: center;
-    }
     @media screen and (max-width: 300px) {
       .backbtn, .confirmbtn {
         width: 100%;
       }
     }
-
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelector('.free-notice').style.display = 'block';
-    });
-  </script>
 </head>
 <body>
   <div class="header">
@@ -117,16 +105,16 @@
       <div style="font-size:1.5em; color:#696666; text-align:center;">Sign Up Basic User</div>
       <hr>
       <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter Name" name="basicname" id="name" value="" required>
+      <input type="text" placeholder="Enter Name" name="basicname" id="name" required>
 
       <label for="pass"><b>Password</b></label>
-      <input type="text" placeholder="Enter Password" name="basicpass" id="pass" value="" required>
+      <input type="text" placeholder="Enter Password" name="basicpass" id="pass" required>
 
       <label for="phoneno"><b>Phone Number</b></label>
-      <input type="tel" placeholder="Enter Phone Number" name="basicphone" id="phoneno"  value="" required>
+      <input type="tel" placeholder="Enter Phone Number" name="basicphone" id="phoneno" required>
 
       <label for="email"><b>Email</b></label>
-      <input type="email" placeholder="Enter Email" name="basicemail" id="email" value="" required>
+      <input type="email" placeholder="Enter Email" name="basicemail" id="email" required>
 
       <div class="clearfix">
         <button type="submit" class="confirmbtn" name="add basic" value="New Basic Account">Confirm</button>

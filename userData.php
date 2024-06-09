@@ -12,6 +12,9 @@ function fetchUserData($dbconn, $session_name, $table, $name_field) {
     $name = $_SESSION[$session_name];
     $sql = "SELECT * FROM $table WHERE $name_field = ?";
     $stmt = $dbconn->prepare($sql);
+    if (!$stmt) {
+        die("Database error: " . $dbconn->error);
+    }
     $stmt->bind_param('s', $name);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -24,21 +27,19 @@ $user = null;
 $userrole = '';
 $mainPageURL = '';
 
-if (isset($_SESSION['admin'])) {
-    $user = fetchUserData($dbconn, 'admin', 'admin', 'admin_name');
-    $userrole = 'Admin';
-    $mainPageURL = 'adminpage.php';
-} elseif (isset($_SESSION['tutor'])) {
-    $user = fetchUserData($dbconn, 'tutor', 'tutor', 'tutor_name');
-    $userrole = 'Tutor';
-    $mainPageURL = 'tutor_page.php';
-} elseif (isset($_SESSION['premium'])) {
-    $user = fetchUserData($dbconn, 'premium', 'premium_user', 'premium_name');
-    $userrole = 'Premium User';
-    $mainPageURL = 'premiumMainpage.php';
-} elseif (isset($_SESSION['basic'])) {
-    $user = fetchUserData($dbconn, 'basic', 'basic_user', 'basic_name');
-    $userrole = 'Basic User';
-    $mainPageURL = 'basicMainpage.php';
+const USER_ROLES = [
+    'admin' => ['table' => 'admin', 'name_field' => 'admin_name', 'url' => 'adminpage.php'],
+    'tutor' => ['table' => 'tutor', 'name_field' => 'tutor_name', 'url' => 'tutor_page.php'],
+    'premium' => ['table' => 'premium_user', 'name_field' => 'premium_name', 'url' => 'premiumMainpage.php'],
+    'basic' => ['table' => 'basic_user', 'name_field' => 'basic_name', 'url' => 'basicMainpage.php']
+];
+
+foreach (USER_ROLES as $role => $details) {
+    if (isset($_SESSION[$role])) {
+        $user = fetchUserData($dbconn, $role, $details['table'], $details['name_field']);
+        $userrole = ucfirst($role);
+        $mainPageURL = $details['url'];
+        break;
+    }
 }
 ?>

@@ -3,35 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon.png"/>
     <title>Payment Process</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #097F94;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            margin: 0;
         }
         .payment-result {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            color: #097F94;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
             text-align: center;
+        }
+        .payment-result h2 {
+            margin-bottom: 20px;
         }
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #28a745;
+            padding: 15px;
+            width: 25px;
+            background-color: #097F94;
             color: white;
-            text-align: center;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
             margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
         }
         .btn:hover {
-            background-color: #218838;
+            background-color: #ffffff;
+            color: #097F94;
+            border: 1px solid #097F94;
+        }
+        @media (max-width: 600px) {
+            .payment-result {
+                padding: 20px;
+            }
+            .btn {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -64,11 +87,11 @@
             
             if ($stmt2->execute()) {
                 echo "<h2>Payment Processed</h2>";
-                echo "<p>Cardholder Name: " . $cardName . "</p>";
-                echo "<p>Card Number: " . $cardNumber . "</p>";
+                echo "<p>Cardholder Name: " . htmlspecialchars($cardName) . "</p>";
+                echo "<p>Card Number: " . htmlspecialchars($cardNumber) . "</p>";
                 echo "<p>Amount: RM " . number_format($amount, 2, '.', '') . "</p>";
                 echo "<p>Account successfully created!</p>";
-                echo '<button class="btn" onclick="redirectToLogin()">OK</button>';
+                echo '<a href="loginpage.php" class="btn">OK</a>';
             } else {
                 echo "<p>Error: " . $stmt2->error . "</p>";
             }
@@ -85,12 +108,6 @@
     }
     ?>
 </div>
-
-<script>
-function redirectToLogin() {
-    window.location.href = "loginpage.php";
-}
-</script>
 
 </body>
 </html>
