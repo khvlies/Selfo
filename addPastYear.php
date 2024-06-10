@@ -1,4 +1,7 @@
 <?php
+//fetch user data
+include("userData.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -47,25 +50,34 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/style2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon.png"/>
+    <title>Past Year</title>
+    <link rel="stylesheet" href="css/nav-S.css">
 </head>
 <body>
-
-<h2>Upload Past Year</h2>
-<form action="uploadPY.php" method="post" enctype="multipart/form-data">
-    <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Course Code</label>
-        <div class="col-sm-6">
-            <input type="text" class="form-control" name="course_code" value="<?php echo $course_code; ?>">
+    <div class="header">
+        <div class="logo">
+        <a href="<?php echo htmlspecialchars($mainPageURL); ?>"><img src="images/selfo.jpg" alt="Company Logo"></a>
         </div>
     </div>
-    Select file to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload File" name="submit">
-    <div class="col-sm-3 d-grid">
-        <a class="btn btn-outline-primary" href="listPastYear.php" role="button">Cancel</a>
+<main>
+<h2>Upload Past Year</h2>
+<form action="uploadPY.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="course_code">Course Code</label>
+        <input type="text" name="course_code" value="<?php echo $course_code; ?>">
+    </div>
+    <div class="form-group">
+        <label for="fileToUpload">Select file to upload:</label>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+    </div>
+    <div class="form-buttons">
+    <input class="btn btn-primary" type="submit" value="Upload File" name="submit">
+    <a class="btn btn-outline-primary" href="listPastYear.php" role="button">Cancel</a>
     </div>
 </form>
-
+</main>
 </body>
 </html>

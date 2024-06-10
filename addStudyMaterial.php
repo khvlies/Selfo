@@ -69,12 +69,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
             <label for="course_code">Course Code:</label>
             <input type="text" name="course_code" value="<?php echo $course_code; ?>">
         </div>
-        </div class="form-group">
+        <div class="form-group">
             <label for="fileToUpload">Select file to upload:</label>
             <input type="file" name="fileToUpload" id="fileToUpload">
         </div>    
         <div class="form-buttons">
-            <input type="submit" value="Upload File" name="submit" class="btn btn-primary">
+            <input class="btn btn-primary" type="submit" value="Upload File" name="submit">
             <a class="btn btn-outline-primary" href="listStudyMaterial.php" role="button">Cancel</a>
         </div>
     </form>

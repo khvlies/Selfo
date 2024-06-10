@@ -153,7 +153,7 @@ try {
                 </div>
                 <div class="form-group">
                     <label for="fileToUpload">Upload New File:</label>
-                    <input type="file" class="form-control" name="fileToUpload" id="fileToUpload">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
                 <div class="form-buttons">
                     <button type="submit" class="btn btn-primary">Submit</button>

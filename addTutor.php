@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -61,11 +62,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icon.png"/>
     <title>Tutor</title>
-    <link rel="stylesheet" href="css/style2.css">
-    <script src ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/nav-S.css">
 </head>
 <body>
-    <main>
+    <div class="header">
+        <div class="logo">
+        <a href="<?php echo htmlspecialchars($mainPageURL); ?>"><img src="images/selfo.jpg" alt="Company Logo"></a>
+        </div>
+    </div>
+
+    <main style="margin-top: 100px">
     <div class="container my-5">
         <h2>New Tutor</h2>
 
@@ -80,35 +86,26 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
         }
         ?>
         <form method="post">
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">ID</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="tutor_id" value="<?php echo $tutor_id; ?>">
+            <div class="form-group">
+                <label for="tutor_id">ID</label>
+                <input type="text" name="tutor_id" value="<?php echo $tutor_id; ?>">
+            </div>
+            <div class="form-group">
+                <label for="tutor_password" >Password</label>
+                <input type="text" name="tutor_password" value="<?php echo $tutor_password; ?>">
+            </div>
+            <div class="form-group">
+                <label for="tutor_name">Name</label>
+                <input type="text"  name="tutor_name" value="<?php echo $tutor_name; ?>">
+            </div>
+            <div class="form-group">
+                <label for="tutor_phone">Phone Number</label>
+                <input type="text" name="tutor_phone" value="<?php echo $tutor_phone; ?>">
                 </div>
             </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Password</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="tutor_password" value="<?php echo $tutor_password; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Name</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="tutor_name" value="<?php echo $tutor_name; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Phone Number</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="tutor_phone" value="<?php echo $tutor_phone; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Email</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="tutor_email" value="<?php echo $tutor_email; ?>">
-                </div>
+            <div class="form-group">
+                <label for="tutor_email">Email</label>
+                <input type="text" name="tutor_email" value="<?php echo $tutor_email; ?>">
             </div>
             
             <?php
@@ -126,13 +123,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
             }
             ?>
 
-            <div class="row mb-3">
-                <div class="offset-sm-3 col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="listTutor.php" role="button">Cancel</a>
-                </div>
+            <div class="form=-buttons">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-outline-primary" href="listTutor.php" role="button">Cancel</a>
             </div>
         </form>
     </div> 
