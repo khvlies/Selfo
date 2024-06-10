@@ -136,7 +136,7 @@ header nav a:hover::after {
 }
 
 .box-content {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 40px;
   border-radius: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -146,6 +146,11 @@ header nav a:hover::after {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
+}
+
+.box-content:hover{
+  background-color: #dcdcdc;
 }
 
 .box-content img {
