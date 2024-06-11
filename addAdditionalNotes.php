@@ -70,10 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form action="uploadAddNotes.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="addN_id">Note ID:</label>
-            <input type="text" name="addN_id" id="addN_id" value="<?php echo $addN_id; ?>">
-        </div>
-        <div class="form-group">
             <label for="fileToUpload">Select file to upload:</label>
             <input type="file" name="fileToUpload" id="fileToUpload">
         </div>
