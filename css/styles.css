@@ -9,7 +9,11 @@ main {
     padding: 20px;
     text-align: center;
 }
-
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 h2 {
     margin-top: 20px;
 }
@@ -63,6 +67,7 @@ table {
     color: black;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 20px;
 }
 
 table th, table td {
