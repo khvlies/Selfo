@@ -25,12 +25,6 @@
         </div>
       </div>
       <div class="column">
-        <div id="Users" class="box-content">
-          <a href="#"><img src="images/profile.png" alt="Profile Icon"></a>
-          <h2>Users</h2>
-        </div>
-      </div>
-      <div class="column">
         <div id="Tutor" class="box-content">
           <a href="listTutor.php"><img src="images/tutor.png" alt="Chatbox Icon"></a>
           <h2>Tutor</h2>
