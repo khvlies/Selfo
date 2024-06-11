@@ -35,3 +35,5 @@ $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin'
       </div>
     </div>
   </header>
+</body>
+</html>

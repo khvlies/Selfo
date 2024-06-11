@@ -34,3 +34,5 @@ $tutor_name = isset($_SESSION['tutor_name']) ? $_SESSION['tutor_name'] : 'Tutor'
       </div>
     </div>
   </header>
+  </body>
+  </html>
