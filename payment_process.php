@@ -70,8 +70,9 @@
         $cardNumber = htmlspecialchars($_POST['cardNumber']);
         $amount = 65.00; // Fixed amount
 
-        $stmt = $dbconn->prepare("INSERT INTO payment (cardholder_name, card_number) VALUES (?, ?)");
-        $stmt->bind_param("ss", $cardName, $cardNumber);
+        // Insert payment details into the payment table, including the amount
+        $stmt = $dbconn->prepare("INSERT INTO payment (cardholder_name, card_number, amount) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssd", $cardName, $cardNumber, $amount);
 
         if ($stmt->execute()) {
             // Retrieve premium user details from session

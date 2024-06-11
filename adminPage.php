@@ -30,6 +30,12 @@
           <h2>Tutor</h2>
         </div>
       </div>
+      <div class="column">
+        <div id="Payment" class="box-content">
+          <a href="listPayment.php"><img src="images/payment.jpg" alt="Payment Icon"></a>
+          <h2>Payment</h2>
+        </div>
+      </div>
     </div>
   </div>
 </body>

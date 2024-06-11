@@ -23,6 +23,7 @@ $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin'
       <a href="listBasicUser.php">Basic User</a>
       <a href="listPremiumUser.php">Premium User</a>
       <a href="listTutor.php">Tutor</a>
+      <a href="listPayment.php">Payment</a>
     </nav>
     <div class="dropdown">
       <div class="profile">
