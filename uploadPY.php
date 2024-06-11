@@ -20,25 +20,34 @@ if (isset($_POST["submit"])) {
 
 // Check if file already exists
 if (file_exists($target_file)) {
-    $message = "Sorry, file already exists.";
+    $redirectScript = "<script>
+                alert('The file already exist.');
+                window.location.href = 'listStudyMaterial.php';
+            </script>";
     $uploadOk = 0;
 }
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 5000000) { // 5MB limit
-    $message = "Sorry, your file is too large.";
+    $redirectScript = "<script>
+                alert('The file is too large.');
+                window.location.href = 'listStudyMaterial.php';
+            </script>";
     $uploadOk = 0;
 }
 
 // Allow certain file formats
-if ($fileType != "pdf" && $fileType != "docx" && $fileType != "txt") {
-    $message = "Sorry, only PDF, DOCX, & TXT files are allowed.";
+if ($fileType != "pdf" && $fileType != "docx" && $fileType != "txt" && $fileType != "pptx") {
+    $redirectScript = "<script>
+                alert('Sorry, only PDF, DOCX, TXT & PPTX files are allowed.');
+                window.location.href = 'listStudyMaterial.php';
+            </script>";
     $uploadOk = 0;
 }
 
+
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    $message = "Sorry, your file was not uploaded.";
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         // Insert file metadata into database
@@ -79,7 +88,7 @@ if ($uploadOk == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icon.png"/>
     <title>Upload Past Year</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nav-S.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
