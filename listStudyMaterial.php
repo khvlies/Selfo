@@ -10,7 +10,7 @@
 <body>
 <?php include('nav-A.php'); ?>
     <main>
-    <div class="container my-5">
+    <div class="container">
         <h2>List of Study Material</h2>
         <a class="btn btn-secondary" href="addStudyMaterial.php" role="button">Add Study Material</a>
         <br>
