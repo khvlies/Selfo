@@ -7,10 +7,10 @@ body {
 
 header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 80px;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 10px 25px;
   background-color: white;
   color: black;
 }
@@ -18,23 +18,23 @@ header {
 header .logo img {
   width: 80px;
   height: auto;
+  padding: 10px;
+  margin-left: 10px;
 }
 
 header nav {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 10px;
 }
 
 header nav a {
-  margin: 5px 0;
+  margin: 0 15px;
   text-decoration: none;
   color: black;
   font-weight: bold;
   position: relative;
   padding: 5px 0;
-  transition: color 0.3s; /* Smooth transition */
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition */
 }
 
 header nav a::after {
@@ -62,7 +62,6 @@ header nav a:hover::after {
   display: flex;
   align-items: center;
   position: relative;
-  margin-top: 10px;
 }
 
 .profile img {
@@ -137,7 +136,7 @@ header nav a:hover::after {
 }
 
 .box-content {
-  background-color: #a71e1e;
+  background-color: #ffffff;
   padding: 40px;
   border-radius: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -150,8 +149,8 @@ header nav a:hover::after {
   cursor: pointer;
 }
 
-.box-content:hover {
-  background-color: #9b9696;
+.box-content:hover{
+  background-color: #dcdcdc;
 }
 
 .box-content img {
@@ -165,7 +164,16 @@ header nav a:hover::after {
 /* Media Queries */
 @media screen and (max-width: 1024px) {
   header {
-    padding: 10px 15px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  header nav a {
+    margin: 5px 0;
   }
 
   .profile img {
@@ -174,6 +182,10 @@ header nav a:hover::after {
 }
 
 @media screen and (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+  }
+
   .logo img {
     width: 70px;
   }
@@ -183,7 +195,7 @@ header nav a:hover::after {
   }
 
   header nav a {
-    margin: 5px 0;
+    margin: 0 10px;
   }
 }
 
@@ -191,9 +203,9 @@ header nav a:hover::after {
   .profile img {
     width: 35px;
   }
-  
+
   header nav a {
-    margin: 5px 0;
+    margin: 0 8px;
   }
 
   .column {
@@ -204,34 +216,8 @@ header nav a:hover::after {
     padding: 20px;
     height: auto; /* Remove fixed height for smaller screens */
   }
-
   .box-content img {
     width: 60%;
     height: auto;
-  }
-}
-
-/* Specific Styles for 480px and Below */
-@media screen and (max-width: 480px) {
-  header {
-    padding: 5px 10px;
-  }
-
-  header .logo img {
-    width: 60px;
-    margin: 5px 0;
-  }
-
-  header nav a {
-    margin: 3px 0;
-    font-size: 14px;
-  }
-
-  .profile img {
-    width: 30px;
-  }
-
-  .dropbtn {
-    font-size: 14px;
   }
 }
