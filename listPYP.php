@@ -18,7 +18,7 @@
                 <tr>
                     <th>ID</th>
                     <th>COURSE CODE</th>
-                    <th>FILE NAME</th>
+                    <th>CONTENT</th>
                     <th>UPLOAD DATE</th>
                     <th>OPTIONS</th>
                 </tr>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icon.png"/>
-    <title>Online Session</title>
+    <title>Additional Notes</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>FILE NAME</th>
+                    <th>CONTENT</th>
                     <th>UPLOAD DATE</th>
                     <th>OPTIONS</th>
                 </tr>

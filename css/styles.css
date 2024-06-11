@@ -84,4 +84,101 @@ table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+/* Media Queries for Tablets in Portrait */
+@media (max-width: 768px) and (orientation: portrait) {
+    body {
+        background-color: #097F94;
+        color: white;
+    }
 
+    main {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        margin: 8px 4px;
+        font-size: 12px;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+/* Media Queries for Phones in Portrait */
+@media (max-width: 480px) and (orientation: portrait) {
+    body {
+        background-color: #097F94;
+        color: white;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        margin: 6px 3px;
+        font-size: 10px;
+    }
+
+    table {
+        font-size: 10px;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    /* Adjust the table for better readability on small screens */
+    table, table th, table td {
+        display: block;
+    }
+
+    table th, table td {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    table th {
+        background-color: #0e5151;
+        color: white;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+    }
+
+    table td {
+        background-color: white;
+        color: black;
+        border: 1px solid #097F94;
+        margin-bottom: 5px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Make buttons full width on small screens */
+@media (max-width: 480px) {
+    .btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

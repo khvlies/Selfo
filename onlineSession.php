@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="images/icon.png"/>
-  <title>Premium User</title>
+  <title>Online Session</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>ONLINE SESSION ID</th>
+                    <th>ID</th>
                     <th>COURSE CODE</th>
                     <th>LINK MEETING</th>
                 </tr>
@@ -49,7 +49,7 @@
                     echo "<tr>
                     <td>" . htmlspecialchars($row['online_id'], ENT_QUOTES, 'UTF-8') . "</td>
                     <td>" . htmlspecialchars($row['course_code'], ENT_QUOTES, 'UTF-8') . "</td>
-                    <td><a class='btn btn-primary btn-sm' href=\"" . htmlspecialchars($row['link_meet'], ENT_QUOTES, 'UTF-8') . "\">Join Session</a></td>
+                    <td><a class='btn btn-primary btn-sm' target='_blank' href=\"" . htmlspecialchars($row['link_meet'], ENT_QUOTES, 'UTF-8') . "\">Join Session</a></td>
                     </tr>";
                 }
 
