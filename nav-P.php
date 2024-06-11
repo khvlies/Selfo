@@ -29,7 +29,7 @@ $premium_name = isset($_SESSION['premium_name']) ? $_SESSION['premium_name'] : '
       </div>
       <div class="dropdown-content">
         <a href="profilepage.php">Profile</a>
-        <a href="logout.php">Logout</a>
+        <a href="logout.php">Log Out</a>
       </div>
     </div>
   </header>

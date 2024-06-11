@@ -30,7 +30,7 @@ $tutor_name = isset($_SESSION['tutor_name']) ? $_SESSION['tutor_name'] : 'Tutor'
       </div>
       <div class="dropdown-content">
         <a href="profilepage.php">Profile</a>
-        <a href="logout.php">Logout</a>
+        <a href="logout.php">Log Out</a>
       </div>
     </div>
   </header>

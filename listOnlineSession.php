@@ -17,7 +17,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ONLINE SESSION ID</th>
+                    <th>ID</th>
                     <th>COURSE CODE</th>
                     <th>CONTENT</th>
                     <th>OPTIONS</th>

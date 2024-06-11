@@ -28,7 +28,7 @@ $basic_name = isset($_SESSION['basic_name']) ? $_SESSION['basic_name'] : 'Basic 
       </div>
       <div class="dropdown-content">
         <a href="profilepage.php">Profile</a>
-        <a href="logout.php">Logout</a>
+        <a href="logout.php">Log Out</a>
       </div>
     </div>
   </header>
