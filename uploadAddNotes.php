@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
 if (file_exists($target_file)) {
     $redirectScript = "<script>
                 alert('The file already exist.');
-                window.location.href = 'listStudyMaterial.php';
+                window.location.href = 'listAdditionalNotes.php';
             </script>";
     $uploadOk = 0;
 }
@@ -31,7 +31,7 @@ if (file_exists($target_file)) {
 if ($_FILES["fileToUpload"]["size"] > 5000000) { // 5MB limit
     $redirectScript = "<script>
                 alert('The file is too large.');
-                window.location.href = 'listStudyMaterial.php';
+                window.location.href = 'listAdditionalNotes.php';
             </script>";
     $uploadOk = 0;
 }
@@ -40,7 +40,7 @@ if ($_FILES["fileToUpload"]["size"] > 5000000) { // 5MB limit
 if ($fileType != "pdf" && $fileType != "docx" && $fileType != "txt" && $fileType != "pptx") {
     $redirectScript = "<script>
                 alert('Sorry, only PDF, DOCX, TXT & PPTX files are allowed.');
-                window.location.href = 'listStudyMaterial.php';
+                window.location.href = 'listAdditionalNotes.php';
             </script>";
     $uploadOk = 0;
 }
