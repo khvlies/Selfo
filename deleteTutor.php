@@ -15,30 +15,39 @@ $conn = new mysqli($servername, $username, $password, $database);
 
 $errorMessage = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the ID from the form
-    $tutor_id = $_POST['tutor_id'];
+try {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Check if 'tutor_id' is set
+        if (isset($_POST['tutor_id'])) {
+            $id = $_POST['tutor_id']; // ID to delete (VARCHAR)
+        } else {
+            throw new Exception("Error: 'tutor_id' not set.");
+        }
 
-    // Ensure the ID is not empty
-    if (empty($tutor_id)) {
-        echo "Error: 'tutor_id' not set.";
-        exit();
+        // Prepare a delete statement
+        $stmt = $conn->prepare("DELETE FROM tutor WHERE tutor_id = ?");
+        $stmt->bind_param("s", $id); // "s" indicates the parameter is a string
+
+        // Execute the statement
+        $stmt->execute();
+
+        // Check if any row was deleted
+        if ($stmt->affected_rows > 0) {
+            // Record deleted successfully, redirect to listTutor.php
+            header("Location: listTutor.php");
+            exit;
+        } else {
+            $errorMessage = "No record found with the specified ID.";
+        }
+
+        // Close the statement and connection
+        $stmt->close();
     }
-
-    // Prepare the SQL statement to delete the record
-    $stmt = $conn->prepare("DELETE FROM tutor WHERE tutor_id = ?");
-    $stmt->bind_param("s", $tutor_id);
-
-    // Execute the statement
-    if ($stmt->execute()) {
-        echo "Record deleted successfully";
-    } else {
-        echo "Error deleting record: " . $stmt->error;
-    }
-
-    // Close the statement and connection
-    $stmt->close();
     $conn->close();
+} catch (mysqli_sql_exception $e) {
+    $errorMessage = "Error: " . $e->getMessage();
+} catch (Exception $e) {
+    $errorMessage = "Error: " . $e->getMessage();
 }
 ?>
 

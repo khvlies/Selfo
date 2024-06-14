@@ -61,8 +61,8 @@ try {
                 $errorMessage = "Sorry, your file is too large.";
                 $uploadOk = 0;
             }
-            if ($fileType != "pdf" && $fileType != "docx" && $fileType != "txt") {
-                $errorMessage = "Sorry, only PDF, DOCX, & TXT files are allowed.";
+            if ($fileType != "pdf" && $fileType != "docx" && $fileType != "txt" && $fileType != "pptx") {
+                $errorMessage = "Sorry, only PDF, DOCX, TXT & PPTX files are allowed.";
                 $uploadOk = 0;
             }
             if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {

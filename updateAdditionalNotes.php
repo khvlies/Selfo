@@ -57,8 +57,8 @@ try {
                 $errorMessage = "Sorry, your file is too large.";
                 $uploadOk = 0;
             }
-            if ($fileType != "pdf" && $fileType != "docx" && $fileType != "txt") {
-                $errorMessage = "Sorry, only PDF, DOCX, & TXT files are allowed.";
+            if ($fileType != "pdf" && $fileType != "docx" && $fileType != "txt" && $fileType != "pptx") {
+                $errorMessage = "Sorry, only PDF, DOCX, TXT & PPTX files are allowed.";
                 $uploadOk = 0;
             }
             if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -148,7 +148,7 @@ try {
 
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="addN_id">Note ID:</label>
+                    <label for="addN_id">ID:</label>
                     <input type="text" class="form-control" name="addN_id" id="addN_id" value="<?php echo htmlspecialchars($addN_id); ?>" readonly>
                 </div>
                 <div class="form-group">
