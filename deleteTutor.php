@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form method="post" onsubmit="return confirmDelete()">
             <div class="form-group">
                 <label for="tutor_id">ID:</label>
-                <input type="text" class="form-control" name="tutor_id" value="" readonly>
+                <input type="text" class="form-control" name="tutor_id" value="">
             </div>
 
             <div class="form-buttons">
