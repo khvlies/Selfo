@@ -40,7 +40,7 @@ if ($_FILES["fileToUpload"]["size"] > 5000000) { // 5MB limit
 if ($fileType != "pdf" && $fileType != "docx" && $fileType != "txt" && $fileType != "pptx") {
     $redirectScript = "<script>
                 alert('Sorry, only PDF, DOCX, TXT & PPTX files are allowed.');
-                window.location.href = 'listStudyPastYear.php';
+                window.location.href = 'listPastYear.php';
             </script>";
     $uploadOk = 0;
 }

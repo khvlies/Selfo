@@ -23,7 +23,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
     $tutor_name =$_POST["tutor_name"];
     $tutor_phone =$_POST["tutor_phone"];
     $tutor_email =$_POST["tutor_email"];
-    $admin_id =$_POST["admin_id"];
 
     do {
         if ( empty($tutor_id) || empty($tutor_password) || empty($tutor_name) || empty($tutor_phone) || empty($tutor_email) ) {
