@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  session_unset();
+  session_destroy();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +47,6 @@
 
   <!-- Check for error message in PHP session and display alert if exists -->
   <?php
-  session_start();
   if (isset($_SESSION['error'])) {
       echo "<script>showError('" . $_SESSION['error'] . "');</script>";
       unset($_SESSION['error']); // Clear the error after displaying

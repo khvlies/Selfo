@@ -1,5 +1,4 @@
 <?php
-session_start();
 $tutor_name = isset($_SESSION['tutor_name']) ? $_SESSION['tutor_name'] : 'Tutor';
 ?>
 

@@ -1,5 +1,4 @@
 <?php
-session_start();
 $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin';
 ?>
 

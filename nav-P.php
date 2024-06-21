@@ -1,5 +1,4 @@
 <?php
-session_start();
 $premium_name = isset($_SESSION['premium_name']) ? $_SESSION['premium_name'] : 'Premium User';
 ?>
 
