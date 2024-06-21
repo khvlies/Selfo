@@ -42,7 +42,8 @@
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" value="Login">
     </form>
-    <input type="button" value="Sign Up" onclick="window.location.href='signupType.php';" aria-label="Sign Up">
+    <p>
+    Don't have account? <a href="signupType.php">Create an account</a>
   </div>
 
   <!-- Check for error message in PHP session and display alert if exists -->

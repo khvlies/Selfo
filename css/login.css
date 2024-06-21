@@ -27,14 +27,14 @@ input[type="text"], input[type="password"], input[type="submit"], input[type="bu
   width: 100%;
   padding: 10px;
   margin: 8px 0;
-  border: 1px solid #ccc;
+  border: 5px solid #ccc;
   border-radius: 15px;
   box-sizing: border-box;
 }
 input[type="submit"], input[type="button"] {
   background-color: #097F94;
   color: white;
-  border: 1px solid #ccc;
+  border: 5px solid #ccc;
   cursor: pointer;
 }
 input[type="submit"]:hover, input[type="button"]:hover {
