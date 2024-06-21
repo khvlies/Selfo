@@ -1,5 +1,17 @@
 <?php
+session_start();
 $premium_name = isset($_SESSION['premium_name']) ? $_SESSION['premium_name'] : 'Premium User';
+
+// Prevent caching
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
+// Check if the user is logged in
+if (!isset($_SESSION['premium'])) {
+    header("Location: loginpage.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,17 @@
 <?php
+session_start();
 $admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin';
+
+// Prevent caching
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin'])) {
+    header("Location: loginpage.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

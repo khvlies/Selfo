@@ -1,5 +1,17 @@
 <?php
+session_start();
 $tutor_name = isset($_SESSION['tutor_name']) ? $_SESSION['tutor_name'] : 'Tutor';
+
+// Prevent caching
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
+// Check if the user is logged in
+if (!isset($_SESSION['tutor'])) {
+    header("Location: loginpage.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
