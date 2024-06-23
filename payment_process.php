@@ -166,7 +166,7 @@
 
         // Redirect to login page after the download
         setTimeout(() => {
-            window.location.href = 'loginpage.php'; // Replace with your actual login page URL
+            window.location.href = 'loginpage.php'; 
         }, 1000); // Delay to ensure download starts before redirection
     }
 </script>
