@@ -92,7 +92,7 @@
                 echo "<p>Card Number: " . htmlspecialchars($cardNumber) . "</p>";
                 echo "<p>Amount: RM " . number_format($amount, 2, '.', '') . "</p>";
                 echo "<p>Account successfully created!</p>";
-                echo '<a href="loginpage.php" class="btn">OK</a>';
+                echo '<a href="#" class="btn" onclick="downloadReceipt()">Download Receipt</a>';
             } else {
                 echo "<p>Error: " . $stmt2->error . "</p>";
             }
@@ -109,6 +109,67 @@
     }
     ?>
 </div>
+
+<script>
+    function downloadReceipt() {
+        const cardName = '<?php echo htmlspecialchars($cardName); ?>';
+        const cardNumber = '<?php echo htmlspecialchars($cardNumber); ?>';
+        const amount = '<?php echo number_format($amount, 2, '.', ''); ?>';
+
+        const receiptContent = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Payment Receipt</title>
+                <style>
+                    body { font-family: Arial, sans-serif; }
+                    .receipt-container {
+                        width: 80%;
+                        margin: 0 auto;
+                        padding: 20px;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                    }
+                    h2 {
+                        text-align: center;
+                    }
+                    .details {
+                        margin-top: 20px;
+                    }
+                    .details p {
+                        margin: 5px 0;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="receipt-container">
+                    <h2>Payment Receipt</h2>
+                    <div class="details">
+                        <p>Cardholder Name: ${cardName}</p>
+                        <p>Card Number: ${cardNumber}</p>
+                        <p>Amount: RM ${amount}</p>
+                        <p>Account successfully created!</p>
+                    </div>
+                </div>
+            </body>
+            </html>
+        `;
+
+        const blob = new Blob([receiptContent], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'receipt.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        // Redirect to login page after the download
+        setTimeout(() => {
+            window.location.href = 'loginpage.php'; // Replace with your actual login page URL
+        }, 1000); // Delay to ensure download starts before redirection
+    }
+</script>
 
 </body>
 </html>
