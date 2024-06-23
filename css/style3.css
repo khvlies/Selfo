@@ -7,7 +7,6 @@ body {
 
 header {
   display: flex;
-  position: fixed;
   height: 80px;
   justify-content: space-between;
   align-items: center;
@@ -219,6 +218,6 @@ header nav a:hover::after {
   }
   .box-content img {
     width: 60%;
-    height: auto;
+    height: auto;
   }
 }
