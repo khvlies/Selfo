@@ -71,7 +71,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form action="uploadAddNotes.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="fileToUpload">Select file to upload:</label>
-            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="file" name="fileToUpload" id="fileToUpload" required>
+        </div>
+        <div class="form-group">
+            <label for="tutor_id">Tutor:</label>
+            <select name="tutor_id" id="tutor_id" required>
+                <?php
+                // Fetch tutors from the database
+                $sql = "SELECT tutor_id, tutor_name FROM tutor";
+                $result = $connection->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='{$row['tutor_id']}'>{$row['tutor_name']}</option>";
+                }
+                ?>
+            </select>
         </div>
         <div class="form-buttons">
             <input type="submit" value="Upload File" name="submit" class="btn btn-primary">

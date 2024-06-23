@@ -16,11 +16,23 @@ $conn = new mysqli($servername, $username, $password, $database);
 $online_id ="";
 $course_code ="";
 $link_meet ="";
+$tutor_id ="";
+$tutor_name ="";
+$tutors = [];
 
 $errorMessage = "";
 $successMessage = "";
 
 try {
+    // Fetch tutors for the dropdown
+    $tutor_sql = "SELECT tutor_id, tutor_name FROM tutor";
+    $tutor_result = $conn->query($tutor_sql);
+    if ($tutor_result->num_rows > 0) {
+        while ($row = $tutor_result->fetch_assoc()) {
+            $tutors[] = $row;
+        }
+    }
+
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if (!isset($_GET["online_id"])) {
             header("location: listOnlineSession.php");
@@ -29,7 +41,10 @@ try {
 
         $online_id = $_GET["online_id"];
 
-        $sql = "SELECT * FROM online_session WHERE online_id = ?";
+        $sql = "SELECT os.*, t.tutor_name 
+                FROM online_session os
+                JOIN tutor t ON os.tutor_id = t.tutor_id
+                WHERE os.online_id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $online_id);
         $stmt->execute();
@@ -43,17 +58,20 @@ try {
 
         $course_code = $row["course_code"];
         $link_meet = $row["link_meet"];
+        $tutor_id = $row["tutor_id"];
+        $tutor_name = $row["tutor_name"];
         
     } elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve and sanitize user input
         $online_id = $_POST['online_id'];
         $course_code = $_POST['course_code'];
         $link_meet = $_POST['link_meet'];
+        $tutor_id = $_POST['tutor_id'];
 
         // Prepare an update statement
-        $sql = "UPDATE online_session SET course_code = ?, link_meet = ?  WHERE online_id = ?";
+        $sql = "UPDATE online_session SET course_code = ?, link_meet = ?, tutor_id = ?  WHERE online_id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $course_code, $link_meet,  $online_id);
+        $stmt->bind_param("ssss", $course_code, $link_meet, $tutor_id, $online_id);
 
         // Execute the statement
         $stmt->execute();
@@ -61,7 +79,7 @@ try {
         // Check if any row was updated
         if ($stmt->affected_rows > 0) {
             $successMessage = "Record updated successfully.";
-            // Redirect to listTutor.php after successful update
+            // Redirect to listOnlineSession.php after successful update
             header("Location:listOnlineSession.php");
             exit();
         } else {
@@ -113,12 +131,7 @@ try {
             <?php endif; ?>
 
             <form method="post">
-                <div class="form-group">
-                    <label for="online_id" class="col-sm-3 col-form-label">ID</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="online_id" id="online_id" value="<?php echo $online_id; ?>" readonly>
-                    </div>
-                </div>
+                <input type="hidden" name="online_id" value="<?php echo $online_id; ?>">
                 <div class="form-group">
                     <label for="course_code" class="col-sm-3 col-form-label">Course Code</label>
                     <div class="col-sm-6">
@@ -129,6 +142,16 @@ try {
                     <label for="link_meet" class="col-sm-3 col-form-label">Link Meeting</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="link_meet" id="link_meet" value="<?php echo $link_meet; ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tutor_id" class="col-sm-3 col-form-label">Tutor</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="tutor_id" id="tutor_id">
+                            <?php foreach ($tutors as $tutor): ?>
+                                <option value="<?php echo $tutor['tutor_id']; ?>" <?php if ($tutor['tutor_id'] == $tutor_id) echo 'selected'; ?>><?php echo $tutor['tutor_name']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row mb-3">

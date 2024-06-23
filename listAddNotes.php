@@ -19,6 +19,7 @@
                     <th>ID</th>
                     <th>CONTENT</th>
                     <th>UPLOAD DATE</th>
+                    <th>UPLOADED BY</th>
                     <th>OPTIONS</th>
                 </tr>
             </thead>
@@ -29,32 +30,35 @@
                 $password = "";
                 $database = "selfodb";
 
-                //create connection
+                // Create connection
                 $connection = new mysqli($servername, $username, $password, $database);
 
-                //check connection
-                if ($connection->connect_error){
-                    die("Connection failed: ". $connection->connect_error);
+                // Check connection
+                if ($connection->connect_error) {
+                    die("Connection failed: " . $connection->connect_error);
                 }
 
-                //read all row from database table
-                $sql = "SELECT * FROM additional_notes";
+                // Read all rows from database table
+                $sql = "SELECT additional_notes.addN_id, additional_notes.file_name, additional_notes.upload_date, tutor.tutor_name
+                        FROM additional_notes
+                        JOIN tutor ON additional_notes.tutor_id = tutor.tutor_id";
                 $result = $connection->query($sql);
 
-                if (!$result){
-                    die("Invalid query: ". $connection->error);
+                if (!$result) {
+                    die("Invalid query: " . $connection->error);
                 }
 
-                //read data of each row
-                while($row = $result->fetch_assoc()){
+                // Read data of each row
+                while ($row = $result->fetch_assoc()) {
                     echo "<tr>
-                    <td>{$row['addN_id']}</td>
-                    <td>{$row['file_name']}</td>
-                    <td>{$row['upload_date']}</td>
-                    <td>
-                        <a class='btn btn-primary btn-sm' href='downloadAN.php?file_id={$row['addN_id']}'>Download</a>
-                    </td>
-                </tr>";
+                        <td>{$row['addN_id']}</td>
+                        <td>{$row['file_name']}</td>
+                        <td>{$row['upload_date']}</td>
+                        <td>{$row['tutor_name']}</td>
+                        <td>
+                            <a class='btn btn-primary btn-sm' href='downloadAN.php?file_id={$row['addN_id']}'>Download</a>
+                        </td>
+                    </tr>";
                 }
                 ?>
             </tbody>
