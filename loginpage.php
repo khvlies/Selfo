@@ -1,8 +1,5 @@
 <?php
   session_start();
-  session_unset();
-  session_destroy();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +40,8 @@
       <input type="submit" value="Login">
     </form>
     <p>
-    Don't have account? <a href="signupType.php">Create an account</a>
+    Don't have an account? <a href="signupType.php">Create an account</a>
+  </p>
   </div>
 
   <!-- Check for error message in PHP session and display alert if exists -->

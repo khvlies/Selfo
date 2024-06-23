@@ -40,6 +40,7 @@ h2 {
 
 .btn-secondary:hover {
     background-color: #0e5151;
+    color: white;
 }
 
 .btn-primary {
@@ -49,6 +50,7 @@ h2 {
 
 .btn-primary:hover {
     background-color: #0e5151;
+    color: white;
 }
 
 .btn-danger {

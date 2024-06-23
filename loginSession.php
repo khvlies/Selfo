@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
             $_SESSION[$session_name] = $user[$name_field];
-            $_SESSION[$session_name.'_name'] = $user[$session_name.'_name'];
+            $_SESSION[$session_name.'_name'] = $user[$name_field];
             header("Location: $redirect_page");
             exit();
         }
